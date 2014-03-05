@@ -1,7 +1,11 @@
 package stock;
 
+import metrics.StockMetric;
+
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by erik on 04/03/14.
@@ -10,30 +14,34 @@ public class Stock {
 
     private String symbol;
     private String name;
-    private List<Quote> quotes;
+    private Map<String, List<StockMetric>> metrics;
 
     public Stock(String name, String symbol) {
         this.name = name;
         this.symbol = symbol;
-        quotes = new LinkedList<Quote>();
+        metrics = new HashMap<String, List<StockMetric>>();
     }
 
     public Stock(String symbol) {
         this(symbol, symbol);
     }
 
-    public void addQuote(Quote q) {
-        quotes.add(q);
+    public void addMetric(StockMetric sm) {
+        List<StockMetric> list = metrics.get(sm.getName());
+        if (list == null) {
+            list = new LinkedList<StockMetric>();
+            metrics.put(sm.getName(), list);
+        }
+        list.add(sm);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(name);
-        for (Quote q : quotes) {
+        for (List<StockMetric> lsm : metrics.values()) {
+            sb.append(lsm);
             sb.append('\n');
-            sb.append('\t');
-            sb.append(q);
         }
         return sb.toString();
     }

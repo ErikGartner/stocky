@@ -24,9 +24,7 @@ public class StockPrediction {
         LocalDate end = LocalDate.parse("2013-12-31");
         StockDataLoader loader = new YahooStockLoader(symbols, start, end);
         List<Stock> stocks = loader.getStockList();
-        for (Stock s : stocks) {
-            System.out.println(s);
-        }
+        System.out.println(stocks);
 
     }
 

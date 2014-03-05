@@ -4,6 +4,7 @@ import metrics.*;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import stock.Quote;
 import stock.Stock;
 
 import java.util.ArrayList;
@@ -50,14 +51,17 @@ public class YahooStockLoader extends StockDataLoader {
 
         while (scan.hasNext()) {
             LocalDate date = LocalDate.parse(scan.next(), formatter);
+            Quote q = new Quote(date);
 
-            stock.addMetric(new OpenMetric(date, Double.parseDouble(scan.next())));
-            stock.addMetric(new HighMetric(date, Double.parseDouble(scan.next())));
-            stock.addMetric(new LowMetric(date, Double.parseDouble(scan.next())));
-            stock.addMetric(new CloseMetric(date, Double.parseDouble(scan.next())));
-            stock.addMetric(new VolumeMetric(date, Double.parseDouble(scan.next())));
+            q.addMetric(new OpenMetric(Double.parseDouble(scan.next())));
+            q.addMetric(new HighMetric(Double.parseDouble(scan.next())));
+            q.addMetric(new LowMetric(Double.parseDouble(scan.next())));
+            q.addMetric(new CloseMetric(Double.parseDouble(scan.next())));
+            q.addMetric(new VolumeMetric(Double.parseDouble(scan.next())));
 
-            scan.next(); //skip adjusted close;
+            scan.next(); //skip adjusted close
+
+            stock.addQuote(q);
         }
         return stock;
     }

@@ -5,8 +5,10 @@ package metrics;
  */
 public class OpenMetric extends StockMetric {
 
+    public static final String NAME = "open";
+
     public OpenMetric(double value) {
-        super("open", value);
+        super(NAME, value);
     }
 
 }

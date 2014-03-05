@@ -5,8 +5,10 @@ package metrics;
  */
 public class LowMetric extends StockMetric {
 
+    public static final String NAME = "low";
+
     public LowMetric(double value) {
-        super("low", value);
+        super(NAME, value);
     }
 
 }

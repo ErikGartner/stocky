@@ -5,8 +5,10 @@ package metrics;
  */
 public class VolumeMetric extends StockMetric {
 
+    public static final String NAME = "volume";
+
     public VolumeMetric(double value) {
-        super("volume", value);
+        super(NAME, value);
     }
 
 }

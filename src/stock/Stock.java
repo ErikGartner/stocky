@@ -1,6 +1,6 @@
 package stock;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +15,7 @@ public class Stock {
     public Stock(String name, String symbol) {
         this.name = name;
         this.symbol = symbol;
-        quotes = new LinkedList<Quote>();
+        quotes = new ArrayList<Quote>();
     }
 
     public Stock(String symbol) {
@@ -24,6 +24,14 @@ public class Stock {
 
     public void addQuote(Quote q) {
         quotes.add(q);
+    }
+
+    public List<Quote> getQuotes() {
+        return new ArrayList<Quote>(quotes);
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -37,6 +45,5 @@ public class Stock {
         }
         return sb.toString();
     }
-
 
 }

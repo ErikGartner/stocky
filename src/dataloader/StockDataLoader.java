@@ -27,7 +27,7 @@ public abstract class StockDataLoader {
         try {
             return new Scanner(new URL(url).openStream(), "UTF-8").useDelimiter("\\A").next();
         } catch (IOException e) {
-            throw new RuntimeException("Failed to from url: " + url);
+            throw new RuntimeException("Failed to read from url: " + url);
         }
     }
 

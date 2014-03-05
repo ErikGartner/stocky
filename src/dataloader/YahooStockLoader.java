@@ -1,5 +1,6 @@
 package dataloader;
 
+import metrics.*;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -41,18 +42,25 @@ public class YahooStockLoader extends StockDataLoader {
 
         String data = readFromURL(queryUrl(symbol));
         Scanner scan = new Scanner(data);
-        scan.nextLine();    //skip header line
+
+        if (!"Date,Open,High,Low,Close,Volume,Adj Close".equalsIgnoreCase(scan.nextLine())) {
+            throw new RuntimeException("Yahoo header was unexpected!");
+        }
+
         scan.useDelimiter(",|\\n");
 
         while (scan.hasNext()) {
             LocalDate date = LocalDate.parse(scan.next(), formatter);
-            double open = Double.parseDouble(scan.next());
-            double high = Double.parseDouble(scan.next());
-            double low = Double.parseDouble(scan.next());
-            double close = Double.parseDouble(scan.next());
-            int volume = Integer.parseInt(scan.next());
-            double adjustedClose = Double.parseDouble(scan.next());
-            Quote q = new Quote(date, open, close, high, low, volume);
+            Quote q = new Quote(date);
+
+            q.addMetric(new OpenMetric(Double.parseDouble(scan.next())));
+            q.addMetric(new HighMetric(Double.parseDouble(scan.next())));
+            q.addMetric(new LowMetric(Double.parseDouble(scan.next())));
+            q.addMetric(new CloseMetric(Double.parseDouble(scan.next())));
+            q.addMetric(new VolumeMetric(Double.parseDouble(scan.next())));
+
+            scan.next(); //skip adjusted close
+
             stock.addQuote(q);
         }
         return stock;

@@ -19,6 +19,7 @@ public class StockPrediction {
 
         List<String> symbols = new ArrayList<String>();
         symbols.add("AAPL");
+        //symbols.add("AXIS.ST");
         LocalDate start = LocalDate.parse("2013-01-01");
         LocalDate end = LocalDate.parse("2013-12-31");
         StockDataLoader loader = new YahooStockLoader(symbols, start, end);

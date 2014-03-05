@@ -1,6 +1,10 @@
 package stock;
 
+import metrics.StockMetric;
 import org.joda.time.LocalDate;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by erik on 04/03/14.
@@ -8,21 +12,19 @@ import org.joda.time.LocalDate;
 public class Quote {
 
     private LocalDate date;
-    private double openPrice, closePrice, high, low;
-    private int volume;
+    private List<StockMetric> metrics;
 
-    public Quote(LocalDate d, double o, double c, double h, double l, int v) {
+    public Quote(LocalDate d) {
         date = d;
-        openPrice = o;
-        closePrice = c;
-        high = h;
-        low = l;
-        volume = v;
+        metrics = new LinkedList<StockMetric>();
+    }
+
+    public void addMetric(StockMetric sm) {
+        metrics.add(sm);
     }
 
     public String toString() {
-        return String.format("%s : %f %f %f %f %d", date, openPrice, low, high, closePrice, volume);
+        return String.format("<%s> %s", date, metrics);
     }
-
 
 }

@@ -1,6 +1,7 @@
 package analyser;
 
 import net.sf.javaml.classification.Classifier;
+import net.sf.javaml.classification.KDtreeKNN;
 import net.sf.javaml.classification.KNearestNeighbors;
 import net.sf.javaml.core.Dataset;
 import net.sf.javaml.core.Instance;
@@ -27,7 +28,7 @@ public class KNNSimplePredictor extends SimplePredictor {
         Classifier classifier = null;
         for (int i = bestK; i < 10; i++) {
 
-            classifier = new KNearestNeighbors(i);
+            classifier = new KDtreeKNN(i);
             double newAccuracy = crossValidateAccuracy(classifier, dataset);
             if (newAccuracy > accuracy) {
                 bestK = i;
@@ -43,7 +44,7 @@ public class KNNSimplePredictor extends SimplePredictor {
 
     @Override
     protected String getName() {
-        return "KNNSimplePredictor";
+        return "K-Nearest Neightbours Simple Predictor";
     }
 
     @Override

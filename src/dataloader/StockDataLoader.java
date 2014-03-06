@@ -17,7 +17,7 @@ public abstract class StockDataLoader {
     protected LocalDate end;
     protected List<String> symbols;
 
-    public StockDataLoader(List<String> symbols, LocalDate start, LocalDate end) {
+    protected StockDataLoader(List<String> symbols, LocalDate start, LocalDate end) {
         this.symbols = symbols;
         this.start = start;
         this.end = end;

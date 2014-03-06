@@ -14,6 +14,16 @@ public abstract class StockPredictor {
         this.stock = stock;
     }
 
+    public String toString() {
+        return String.format("%s[%s] with accuracy %f", getName(), getOptions(), accuracy());
+    }
+
     public abstract StockTrend prediction();
+
+    public abstract double accuracy();
+
+    protected abstract String getName();
+
+    protected abstract String getOptions();
 
 }

@@ -22,7 +22,7 @@ public class Stocky {
         List<String> symbols = new ArrayList<String>();
         symbols.add("AAPL");
         LocalDate start = LocalDate.parse("2000-01-01");
-        LocalDate end = LocalDate.parse("2013-12-30");
+        LocalDate end = LocalDate.parse("2014-03-05");
         StockDataLoader loader = new YahooStockLoader(symbols, start, end);
         List<Stock> stocks = loader.getStockList();
         for (Stock stock : stocks) {

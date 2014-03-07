@@ -26,7 +26,7 @@ public class LogisticSimplePredictor extends SimplePredictor {
 
         Logistic lr = new Logistic();
         Classifier classifier = new WekaClassifier(lr);
-        accuracy = crossValidateAccuracy(classifier, dataset);
+        accuracy = crossvalidateAccuracy(classifier, dataset);
         classifier.buildClassifier(dataset);
         return (StockTrend) classifier.classify(target);
 

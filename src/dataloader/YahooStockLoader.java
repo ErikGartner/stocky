@@ -25,7 +25,7 @@ public class YahooStockLoader extends StockDataLoader {
     }
 
     @Override
-    public List<Stock> getStockList() {
+    public List<Stock> createStockList() {
         List<Stock> stocks = new ArrayList<Stock>(symbols.size());
         for (String symbol : symbols) {
             stocks.add(getStock(symbol));
@@ -58,8 +58,7 @@ public class YahooStockLoader extends StockDataLoader {
             q.addMetric(new LowMetric(Double.parseDouble(scan.next())));
             q.addMetric(new CloseMetric(Double.parseDouble(scan.next())));
             q.addMetric(new VolumeMetric(Double.parseDouble(scan.next())));
-
-            scan.next(); //skip adjusted close
+            q.addMetric(new AdjustedCloseMetric(Double.parseDouble(scan.next())));
 
             stock.addQuote(q);
         }

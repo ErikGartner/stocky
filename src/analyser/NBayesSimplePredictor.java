@@ -26,7 +26,7 @@ public class NBayesSimplePredictor extends SimplePredictor {
 
         NaiveBayes nb = new NaiveBayes();
         Classifier classifier = new WekaClassifier(nb);
-        accuracy = crossValidateAccuracy(classifier, dataset);
+        accuracy = crossvalidateAccuracy(classifier, dataset);
         classifier.buildClassifier(dataset);
         return (StockTrend) classifier.classify(target);
 

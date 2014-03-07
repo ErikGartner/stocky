@@ -26,10 +26,11 @@ public class KNNSimplePredictor extends SimplePredictor {
     protected StockTrend classify(Instance target, Dataset dataset) {
 
         Classifier classifier = null;
-        for (int i = bestK; i < 10; i++) {
+        accuracy = 0.0;
+        for (int i = 2; i < 10; i++) {
 
             classifier = new KDtreeKNN(i);
-            double newAccuracy = crossValidateAccuracy(classifier, dataset);
+            double newAccuracy = crossvalidateAccuracy(classifier, dataset);
             if (newAccuracy > accuracy) {
                 bestK = i;
                 accuracy = newAccuracy;
@@ -44,12 +45,12 @@ public class KNNSimplePredictor extends SimplePredictor {
 
     @Override
     protected String getName() {
-        return "K-Nearest Neightbours Simple Predictor";
+        return "K-Nearest Neighbours Simple Predictor";
     }
 
     @Override
     protected String getOptions() {
-        return "K=" + bestK;
+        return "k=" + bestK;
     }
 
 }

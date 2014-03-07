@@ -9,6 +9,7 @@ import stock.StockTrend;
 public abstract class StockPredictor {
 
     protected Stock stock;
+    protected StockTrend predicted;
 
     protected StockPredictor(Stock stock) {
         this.stock = stock;
@@ -18,9 +19,16 @@ public abstract class StockPredictor {
         return String.format("%s[%s] with accuracy %f", getName(), getOptions(), accuracy());
     }
 
-    public abstract StockTrend prediction();
+    public StockTrend prediction() {
+        if (predicted == null) {
+            predicted = computePrediction();
+        }
+        return predicted;
+    }
 
     public abstract double accuracy();
+
+    protected abstract StockTrend computePrediction();
 
     protected abstract String getName();
 

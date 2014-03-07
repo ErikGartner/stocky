@@ -37,13 +37,6 @@ public abstract class SimplePredictor extends StockPredictor {
         this.usedMetrics = usedMetrics;
     }
 
-    public StockTrend prediction() {
-        if (predicted == null) {
-            predicted = computePrediction();
-        }
-        return predicted;
-    }
-
     public double accuracy() {
         return accuracy;
     }
@@ -97,7 +90,7 @@ public abstract class SimplePredictor extends StockPredictor {
     /**
      * Computes the accuracy of an classifier on the dataset
      */
-    protected double crossValidateAccuracy(Classifier classifier, Dataset dataset) {
+    protected double crossvalidateAccuracy(Classifier classifier, Dataset dataset) {
 
         CrossValidation cv = new CrossValidation(classifier);
         Map<Object, PerformanceMeasure> performances = cv.crossValidation(dataset, 5);

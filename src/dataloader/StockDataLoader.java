@@ -31,6 +31,6 @@ public abstract class StockDataLoader {
         }
     }
 
-    public abstract List<Stock> getStockList();
+    public abstract List<Stock> createStockList();
 
 }

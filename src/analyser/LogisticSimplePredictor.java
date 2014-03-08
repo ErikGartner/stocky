@@ -4,7 +4,6 @@ import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.core.Dataset;
 import net.sf.javaml.core.Instance;
 import net.sf.javaml.tools.weka.WekaClassifier;
-import stock.Stock;
 import stock.StockTrend;
 import weka.classifiers.functions.Logistic;
 
@@ -13,12 +12,12 @@ import weka.classifiers.functions.Logistic;
  */
 public class LogisticSimplePredictor extends SimplePredictor {
 
-    public LogisticSimplePredictor(Stock stock, String[] usedMetrics) {
-        super(stock, usedMetrics);
+    public LogisticSimplePredictor(String[] usedMetrics) {
+        super(usedMetrics);
     }
 
-    public LogisticSimplePredictor(Stock stock) {
-        super(stock);
+    public LogisticSimplePredictor() {
+        super();
     }
 
     @Override
@@ -26,7 +25,7 @@ public class LogisticSimplePredictor extends SimplePredictor {
 
         Logistic lr = new Logistic();
         Classifier classifier = new WekaClassifier(lr);
-        accuracy = crossvalidateAccuracy(classifier, dataset);
+        accuracy = crossValidateAccuracy(classifier, dataset);
         classifier.buildClassifier(dataset);
         return (StockTrend) classifier.classify(target);
 

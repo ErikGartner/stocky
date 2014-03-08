@@ -5,7 +5,6 @@ import net.sf.javaml.classification.KDtreeKNN;
 import net.sf.javaml.classification.KNearestNeighbors;
 import net.sf.javaml.core.Dataset;
 import net.sf.javaml.core.Instance;
-import stock.Stock;
 import stock.StockTrend;
 
 /**
@@ -15,22 +14,22 @@ public class KNNSimplePredictor extends SimplePredictor {
 
     private int bestK = 2;
 
-    public KNNSimplePredictor(Stock stock, String[] usedMetrics) {
-        super(stock, usedMetrics);
+    public KNNSimplePredictor(String[] usedMetrics) {
+        super(usedMetrics);
     }
 
-    public KNNSimplePredictor(Stock stock) {
-        super(stock);
+    public KNNSimplePredictor() {
+        super();
     }
 
     protected StockTrend classify(Instance target, Dataset dataset) {
 
         Classifier classifier = null;
         accuracy = 0.0;
-        for (int i = 2; i < 10; i++) {
+        for (int i = 5; i <= 5; i++) {
 
             classifier = new KDtreeKNN(i);
-            double newAccuracy = crossvalidateAccuracy(classifier, dataset);
+            double newAccuracy = crossValidateAccuracy(classifier, dataset);
             if (newAccuracy > accuracy) {
                 bestK = i;
                 accuracy = newAccuracy;

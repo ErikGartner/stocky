@@ -25,15 +25,14 @@ public abstract class SimplePredictor extends StockPredictor {
             LowMetric.NAME, VolumeMetric.NAME};
 
     private String[] usedMetrics;
-    private StockTrend predicted;
     protected double accuracy;
 
-    protected SimplePredictor(Stock stock) {
-        this(stock, DEFAULT_METRICS);
+    protected SimplePredictor() {
+        this(DEFAULT_METRICS);
     }
 
-    protected SimplePredictor(Stock stock, String[] usedMetrics) {
-        super(stock);
+    protected SimplePredictor(String[] usedMetrics) {
+        super();
         this.usedMetrics = usedMetrics;
     }
 
@@ -90,7 +89,7 @@ public abstract class SimplePredictor extends StockPredictor {
     /**
      * Computes the accuracy of an classifier on the dataset
      */
-    protected double crossvalidateAccuracy(Classifier classifier, Dataset dataset) {
+    protected double crossValidateAccuracy(Classifier classifier, Dataset dataset) {
 
         CrossValidation cv = new CrossValidation(classifier);
         Map<Object, PerformanceMeasure> performances = cv.crossValidation(dataset, 5);

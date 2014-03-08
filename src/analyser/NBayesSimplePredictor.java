@@ -4,7 +4,6 @@ import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.core.Dataset;
 import net.sf.javaml.core.Instance;
 import net.sf.javaml.tools.weka.WekaClassifier;
-import stock.Stock;
 import stock.StockTrend;
 import weka.classifiers.bayes.NaiveBayes;
 
@@ -13,12 +12,12 @@ import weka.classifiers.bayes.NaiveBayes;
  */
 public class NBayesSimplePredictor extends SimplePredictor {
 
-    public NBayesSimplePredictor(Stock stock, String[] usedMetrics) {
-        super(stock, usedMetrics);
+    public NBayesSimplePredictor(String[] usedMetrics) {
+        super(usedMetrics);
     }
 
-    public NBayesSimplePredictor(Stock stock) {
-        super(stock);
+    public NBayesSimplePredictor() {
+        super();
     }
 
     @Override
@@ -26,7 +25,7 @@ public class NBayesSimplePredictor extends SimplePredictor {
 
         NaiveBayes nb = new NaiveBayes();
         Classifier classifier = new WekaClassifier(nb);
-        accuracy = crossvalidateAccuracy(classifier, dataset);
+        accuracy = crossValidateAccuracy(classifier, dataset);
         classifier.buildClassifier(dataset);
         return (StockTrend) classifier.classify(target);
 
@@ -34,7 +33,7 @@ public class NBayesSimplePredictor extends SimplePredictor {
 
     @Override
     protected String getName() {
-        return "Native Bayes Simple Predictor";
+        return "Naive Bayes Simple Predictor";
     }
 
     @Override

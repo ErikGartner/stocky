@@ -11,17 +11,24 @@ public abstract class StockPredictor {
     protected Stock stock;
     protected StockTrend predicted;
 
-    protected StockPredictor(Stock stock) {
-        this.stock = stock;
+    protected StockPredictor() {
     }
 
     public String toString() {
-        return String.format("%s[%s] with accuracy %f", getName(), getOptions(), accuracy());
+       return String.format("%s[%s] with accuracy %f", getName(), getOptions(), accuracy());
+    }
+
+    /**
+     * Need to be called before using the predictor.
+     */
+    public void buildPredictor(Stock stock){
+        this.stock = stock;
+        predicted = computePrediction();
     }
 
     public StockTrend prediction() {
         if (predicted == null) {
-            predicted = computePrediction();
+            throw new RuntimeException("Predictor not built.");
         }
         return predicted;
     }

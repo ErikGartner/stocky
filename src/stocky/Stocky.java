@@ -27,20 +27,20 @@ public class Stocky {
         StockDataLoader loader = new YahooStockLoader(symbols, start, end);
         List<Stock> stocks = loader.createStockList();
 
+        StockPredictor predictor = new KNNSimplePredictor();
+        StockPredictor predictor1 = new LogisticSimplePredictor();
+        StockPredictor predictor2 = new NBayesSimplePredictor();
+        List<StockPredictor> predictors = new ArrayList<StockPredictor>();
+        predictors.add(predictor);
+        predictors.add(predictor1);
+        predictors.add(predictor2);
+
         for (Stock stock : stocks) {
 
-            StockPredictor predictor = new KNNSimplePredictor(stock);
-            StockPredictor predictor1 = new LogisticSimplePredictor(stock);
-            StockPredictor predictor2 = new NBayesSimplePredictor(stock);
-            List<StockPredictor> predictors = new ArrayList<StockPredictor>();
-            predictors.add(predictor);
-            predictors.add(predictor1);
-            predictors.add(predictor2);
-            StockPredictor predictor3 = new VotingMetaClassifier(stock, predictors);
+            StockPredictor predictor3 = new VoteMetaPredictor(predictors);
+            predictor3.buildPredictor(stock);
 
-            System.out.println(stock.getName() + ": " + predictor.prediction());
-            System.out.println(stock.getName() + ": " + predictor1.prediction());
-            System.out.println(stock.getName() + ": " + predictor2.prediction());
+            System.out.println(predictor3.toString());
             System.out.println(stock.getName() + ": " + predictor3.prediction());
 
         }

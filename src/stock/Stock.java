@@ -19,6 +19,12 @@ public class Stock {
         quotes = new LinkedList<Quote>();
     }
 
+    public Stock(String symbol, List<Quote> quotes){
+        this.name = symbol;
+        this.symbol = symbol;
+        this.quotes = new LinkedList<Quote>(quotes);
+    }
+
     public Stock(String symbol) {
         this(symbol, symbol);
     }

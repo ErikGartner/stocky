@@ -15,6 +15,7 @@ public class SVMSimplePredictor extends StockPredictor {
 
     /**
      * Returns the used classifier.
+     *
      * @param dataset
      */
     @Override

@@ -3,8 +3,6 @@ package stocky;
 import analyser.*;
 import dataloader.StockDataLoader;
 import dataloader.YahooStockLoader;
-import net.pushover.client.PushoverClient;
-import net.pushover.client.PushoverRestClient;
 import org.joda.time.LocalDate;
 import stock.Stock;
 
@@ -41,7 +39,7 @@ public class Stocky {
 //        predictors.add(predictor3);
         StockPredictor metaPredictor = new BootstrappingPredictor(predictors);
 
-        for(StockPredictor sp : predictors){
+        for (StockPredictor sp : predictors) {
             for (Stock stock : stocks) {
 
                 sp.buildPredictor(stock);

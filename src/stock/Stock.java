@@ -19,7 +19,7 @@ public class Stock {
         quotes = new LinkedList<Quote>();
     }
 
-    public Stock(String symbol, List<Quote> quotes){
+    public Stock(String symbol, List<Quote> quotes) {
         this.name = symbol;
         this.symbol = symbol;
         this.quotes = new LinkedList<Quote>(quotes);
@@ -37,7 +37,7 @@ public class Stock {
         return new ArrayList<Quote>(quotes);
     }
 
-    public List<NQuotes> getNQuotes(int n){
+    public List<NQuotes> getNQuotes(int n) {
         return NQuotes.createNQuotes(getQuotes(), n);
     }
 

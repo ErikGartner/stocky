@@ -1,8 +1,8 @@
 package stock;
 
-import metrics.derived.AverageCloseMetric;
 import metrics.CloseMetric;
 import metrics.OpenMetric;
+import metrics.derived.AverageCloseMetric;
 
 /**
  * Created by erik on 05/03/14.
@@ -22,7 +22,7 @@ public enum StockTrend {
         return before.getMetric(CloseMetric.NAME).getValue() < after.getMetric(CloseMetric.NAME).getValue() ? BULL : BEAR;
     }
 
-    public static StockTrend trendFromNQuotesAverage(NQuotes before, NQuotes after){
+    public static StockTrend trendFromNQuotesAverage(NQuotes before, NQuotes after) {
         return before.getMetric(AverageCloseMetric.NAME).getValue() < after.getMetric(AverageCloseMetric.NAME).getValue() ? BULL : BEAR;
     }
 

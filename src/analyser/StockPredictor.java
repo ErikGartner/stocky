@@ -2,7 +2,6 @@ package analyser;
 
 import metrics.StockMetric;
 import metrics.derived.AverageCloseMetric;
-import metrics.derived.AverageVolumeMetric;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.classification.evaluation.CrossValidation;
 import net.sf.javaml.classification.evaluation.PerformanceMeasure;
@@ -35,13 +34,13 @@ public abstract class StockPredictor {
     }
 
     public String toString() {
-       return String.format("%s[%s] with accuracy %f", getName(), getOptions(), accuracy());
+        return String.format("%s[%s] with accuracy %f", getName(), getOptions(), accuracy());
     }
 
     /**
      * Need to be called before using the predictor.
      */
-    public void buildPredictor(Stock stock){
+    public void buildPredictor(Stock stock) {
         this.stock = stock;
         predicted = computePrediction();
     }
@@ -57,7 +56,7 @@ public abstract class StockPredictor {
         return accuracy;
     }
 
-    public void setUsedMetrics(String[] metricNames){
+    public void setUsedMetrics(String[] metricNames) {
         usedMetrics = metricNames;
     }
 
@@ -91,7 +90,7 @@ public abstract class StockPredictor {
 
         List<StockMetric> stockMetrics = nQuotes.getMetrics();
         double values[] = new double[usedMetrics.length];
-        for(int i = 0; i < values.length; i++){
+        for (int i = 0; i < values.length; i++) {
             values[i] = stockMetrics.get(i).getValue();
         }
         return new DenseInstance(values);
@@ -99,7 +98,7 @@ public abstract class StockPredictor {
     }
 
     protected Instance getTarget(List<NQuotes> nQuotesList) {
-          return getInstance(nQuotesList.get(nQuotesList.size() - 1));
+        return getInstance(nQuotesList.get(nQuotesList.size() - 1));
     }
 
     /**
@@ -122,6 +121,7 @@ public abstract class StockPredictor {
 
     /**
      * Returns the used classifier.
+     *
      * @param dataset
      */
     protected abstract Classifier classifier(Dataset dataset);

@@ -41,7 +41,7 @@ public class StockTrendTest {
     }
 
     @Test
-    public void trendFromNQuotesAverage() throws Exception{
+    public void trendFromNQuotesAverage() throws Exception {
 
     }
 

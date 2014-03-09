@@ -27,7 +27,7 @@ public abstract class StockMetric {
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return name.hashCode();
     }
 

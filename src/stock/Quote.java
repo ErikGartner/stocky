@@ -37,7 +37,7 @@ public class Quote implements Comparable<Quote> {
         return String.format("<%s> %s", date, metrics);
     }
 
-    public LocalDate getDate(){
+    public LocalDate getDate() {
         return date;
     }
 

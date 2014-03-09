@@ -1,15 +1,12 @@
 package analyser;
 
 import net.sf.javaml.classification.Classifier;
-import net.sf.javaml.classification.KDtreeKNN;
-import net.sf.javaml.classification.KNearestNeighbors;
 import net.sf.javaml.classification.meta.Bagging;
 import net.sf.javaml.core.Dataset;
 import net.sf.javaml.sampling.Sampling;
-import stock.Stock;
-import stock.StockTrend;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Created by erik on 07/03/14.
@@ -32,10 +29,10 @@ public class BootstrappingPredictor extends StockPredictor {
     @Override
     protected String getOptions() {
         StringBuilder sb = new StringBuilder();
-        for(StockPredictor sp : predictors){
+        for (StockPredictor sp : predictors) {
             String words[] = sp.getName().split(" ");
             String acronym = "";
-            for(String s : words){
+            for (String s : words) {
                 acronym += s.charAt(0);
             }
             sb.append(acronym).append(", ");
@@ -52,14 +49,14 @@ public class BootstrappingPredictor extends StockPredictor {
     protected Classifier classifier(Dataset dataset) {
 
         Classifier[] classifiers = new Classifier[predictors.size()];
-        for(int i = 0; i < classifiers.length; i++){
+        for (int i = 0; i < classifiers.length; i++) {
             classifiers[i] = predictors.get(i).classifier(dataset);
         }
 
         Classifier classifier = null;
         accuracy = 0.0;
         Random rnd = new Random(4325435);
-        for(Sampling sampling : Sampling.values()){
+        for (Sampling sampling : Sampling.values()) {
 
             classifier = new Bagging(classifiers, sampling, rnd.nextLong());
             double newAccuracy = crossValidateAccuracy(classifier, dataset);

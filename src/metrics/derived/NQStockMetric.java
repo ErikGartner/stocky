@@ -16,12 +16,12 @@ public abstract class NQStockMetric extends StockMetric {
         super(name, value);
     }
 
-    protected static double average(String metricName, NQuotes nQuotes){
+    protected static double average(String metricName, NQuotes nQuotes) {
         List<Quote> quotes = nQuotes.getQuotes();
         double total = 0.0;
-        for(Quote q : quotes){
+        for (Quote q : quotes) {
             StockMetric sm = q.getMetric(CloseMetric.NAME);
-            if(sm == null)
+            if (sm == null)
                 throw new RuntimeException("Missing required metric: " + metricName);
             total += sm.getValue();
         }

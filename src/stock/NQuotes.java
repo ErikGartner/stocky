@@ -50,7 +50,7 @@ public class NQuotes {
 
     public static List<NQuotes> createNQuotes(List<Quote> quotes, int n){
         List<NQuotes> nQuotesList = new ArrayList<NQuotes>(quotes.size());
-        for(int i = 0; i + n < quotes.size(); i++){
+        for(int i = 0; i + n < quotes.size(); i = i + n){
             nQuotesList.add(new NQuotes(quotes.subList(i, i + n)));
         }
         return nQuotesList;

@@ -25,13 +25,15 @@ public abstract class StockPredictor {
     public static final String[] DEFAULT_METRICS = {AverageCloseMetric.NAME, AverageVolumeMetric.NAME};
 
     protected Stock stock;
-    protected StockTrend predicted;
-    protected String[] usedMetrics;
-    protected double accuracy;
+    private StockTrend predicted;
+    private String[] usedMetrics;
+    private double accuracy;
+    private int scope;
 
     protected StockPredictor() {
         accuracy = -1;
         usedMetrics = DEFAULT_METRICS;
+        scope = 5;
     }
 
     public String toString() {
@@ -61,8 +63,12 @@ public abstract class StockPredictor {
         usedMetrics = metricNames;
     }
 
+    public void setScope(int scope) {
+        this.scope = scope;
+    }
+
     protected StockTrend computePrediction() {
-        List<NQuotes> nQuotesList = stock.getNQuotes(5);
+        List<NQuotes> nQuotesList = stock.getNQuotes(scope);
         Dataset dataset = createDataset(nQuotesList);
         Instance target = getTarget(nQuotesList);
         Classifier classifier = classifier(dataset);

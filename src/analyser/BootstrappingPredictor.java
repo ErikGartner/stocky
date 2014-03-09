@@ -54,7 +54,7 @@ public class BootstrappingPredictor extends StockPredictor {
         }
 
         Classifier classifier = null;
-        accuracy = 0.0;
+        double accuracy = 0.0;
         Random rnd = new Random(4325435);
         for (Sampling sampling : Sampling.values()) {
 

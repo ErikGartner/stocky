@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59867882-1454-448d-9e71-e88f1920a865" name="Default" comment="Did a &quot;refactor code&quot;.">
+    <list default="true" id="59867882-1454-448d-9e71-e88f1920a865" name="Default" comment="Removed print outs.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metrics/derived/AverageCloseMetric.java" afterPath="$PROJECT_DIR$/src/metrics/derived/AverageCloseMetric.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java" afterPath="$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java" afterPath="$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" afterPath="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/StockPredictor.java" afterPath="$PROJECT_DIR$/src/analyser/StockPredictor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stock/StockTrend.java" afterPath="$PROJECT_DIR$/src/stock/StockTrend.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stocky/Stocky.java" afterPath="$PROJECT_DIR$/src/stocky/Stocky.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StockPrediction.iws" />
@@ -86,13 +90,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockPredictor.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StockPredictor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyser/StockPredictor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="67" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.79318184" vertical-offset="641" max-vertical-offset="1800">
+            <state line="86" column="52" selection-start="2533" selection-end="2533" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="1890">
               <folding>
-                <element signature="e#1615#1616#0" expanded="true" />
-                <element signature="e#1656#1657#0" expanded="true" />
+                <element signature="e#1651#1652#0" expanded="true" />
+                <element signature="e#1692#1693#0" expanded="true" />
+                <element signature="e#1731#1732#0" expanded="true" />
+                <element signature="e#1765#1766#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,10 +131,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AverageVolumeMetric.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metrics/derived/AverageVolumeMetric.java">
+      <file leaf-file-name="BootstrappingPredictor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="56" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+            <state line="56" column="15" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" vertical-offset="146" max-vertical-offset="1095">
               <folding />
             </state>
           </provider>
@@ -137,16 +143,18 @@
       <file leaf-file-name="AverageCloseMetric.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/metrics/derived/AverageCloseMetric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-              <folding />
+            <state line="20" column="0" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KNNSimplePredictor.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="KNNSimplePredictor.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="44" selection-start="465" selection-end="860" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="750">
+            <state line="21" column="15" selection-start="511" selection-end="511" vertical-scroll-proportion="0.4522727" vertical-offset="71" max-vertical-offset="750">
               <folding />
             </state>
           </provider>
@@ -211,22 +219,22 @@
         <option value="$PROJECT_DIR$/src/metrics/derived/AverageVolmeMetric.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/AverageVolumeMetric.java" />
         <option value="$PROJECT_DIR$/src/analyser/SimplePredictor.java" />
-        <option value="$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java" />
         <option value="$PROJECT_DIR$/src/analyser/LogisticSimplePredictor.java" />
         <option value="$PROJECT_DIR$/src/analyser/NBayesSimplePredictor.java" />
         <option value="$PROJECT_DIR$/src/analyser/SVMSimplePredictor.java" />
         <option value="$PROJECT_DIR$/test/stock/StockTrendTest.java" />
         <option value="$PROJECT_DIR$/src/analyser/MetaPredictor.java" />
         <option value="$PROJECT_DIR$/src/analyser/VoteMetaPredictor.java" />
-        <option value="$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java" />
         <option value="$PROJECT_DIR$/src/dataloader/StockDataLoader.java" />
         <option value="$PROJECT_DIR$/src/stocky/PushoverNotifier.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/AverageCloseMetric.java" />
-        <option value="$PROJECT_DIR$/src/stocky/Stocky.java" />
         <option value="$PROJECT_DIR$/src/stock/Quote.java" />
         <option value="$PROJECT_DIR$/src/stock/NQuotes.java" />
         <option value="$PROJECT_DIR$/src/analyser/StockPredictor.java" />
+        <option value="$PROJECT_DIR$/src/stocky/Stocky.java" />
+        <option value="$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java" />
+        <option value="$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java" />
       </list>
     </option>
   </component>
@@ -761,7 +769,8 @@
     <MESSAGE value="KNN now uses KDTreeNN." />
     <MESSAGE value="Added AdjustedCloseMetric.&#10;Fixed minor typos and bugs." />
     <MESSAGE value="Did a &quot;refactor code&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Did a &quot;refactor code&quot;." />
+    <MESSAGE value="Removed print outs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed print outs." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -970,13 +979,6 @@
         <state line="6" column="17" selection-start="165" selection-end="172" vertical-scroll-proportion="0.11700468" vertical-offset="0" max-vertical-offset="641" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="7" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stock/StockTrend.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="52" selection-start="692" selection-end="715" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
@@ -1030,8 +1032,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/derived/AverageCloseMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <folding />
+        <state line="20" column="0" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,15 +1044,6 @@
         <state line="14" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="945">
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stocky/Stocky.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="146" max-vertical-offset="930">
-          <folding>
-            <element signature="e#472#480#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1074,13 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="44" selection-start="465" selection-end="860" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="750">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stock/Quote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="42" selection-start="996" selection-end="996" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="705">
@@ -1097,11 +1085,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyser/StockPredictor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="67" selection-start="2488" selection-end="2488" vertical-scroll-proportion="0.79318184" vertical-offset="641" max-vertical-offset="1800">
+        <state line="86" column="52" selection-start="2533" selection-end="2533" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="1890">
           <folding>
-            <element signature="e#1615#1616#0" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1651#1652#0" expanded="true" />
+            <element signature="e#1692#1693#0" expanded="true" />
+            <element signature="e#1731#1732#0" expanded="true" />
+            <element signature="e#1765#1766#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stocky/Stocky.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="18" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.8633257" vertical-offset="86" max-vertical-offset="945">
+          <folding>
+            <element signature="e#472#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="15" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" vertical-offset="146" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="15" selection-start="511" selection-end="511" vertical-scroll-proportion="0.4522727" vertical-offset="71" max-vertical-offset="750">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -36,6 +36,7 @@ public class Stocky {
         predictors.add(predictor);
         predictors.add(predictor1);
         predictors.add(predictor2);
+        predictor1.setScope(30);
         predictors.add(predictor3);
         StockPredictor metaPredictor = new BootstrappingPredictor(predictors);
 

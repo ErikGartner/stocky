@@ -19,7 +19,7 @@ public class KNNSimplePredictor extends StockPredictor {
     @Override
     protected Classifier classifier(Dataset dataset) {
         Classifier classifier = null;
-        accuracy = 0.0;
+        double accuracy = 0.0;
         for (int i = 2; i <= 10; i++) {
 
             classifier = new KDtreeKNN(i);

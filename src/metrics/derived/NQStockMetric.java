@@ -1,6 +1,5 @@
 package metrics.derived;
 
-import metrics.CloseMetric;
 import metrics.StockMetric;
 import stock.NQuotes;
 import stock.Quote;

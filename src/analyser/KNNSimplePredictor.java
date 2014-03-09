@@ -8,7 +8,7 @@ import net.sf.javaml.core.Dataset;
 /**
  * Created by erik on 06/03/14.
  */
-public class KNNSimplePredictor extends SimplePredictor {
+public class KNNSimplePredictor extends StockPredictor {
 
     private int bestK = 2;
 

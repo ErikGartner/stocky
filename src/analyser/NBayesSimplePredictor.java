@@ -3,12 +3,13 @@ package analyser;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.core.Dataset;
 import net.sf.javaml.tools.weka.WekaClassifier;
+import stock.Stock;
 import weka.classifiers.bayes.NaiveBayes;
 
 /**
  * Created by erik on 06/03/14.
  */
-public class NBayesSimplePredictor extends SimplePredictor {
+public class NBayesSimplePredictor extends StockPredictor {
 
     public NBayesSimplePredictor() {
         super();

@@ -8,7 +8,7 @@ import weka.classifiers.functions.Logistic;
 /**
  * Created by erik on 06/03/14.
  */
-public class LogisticSimplePredictor extends SimplePredictor {
+public class LogisticSimplePredictor extends StockPredictor {
 
     public LogisticSimplePredictor() {
         super();

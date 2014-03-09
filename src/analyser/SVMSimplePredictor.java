@@ -7,7 +7,7 @@ import net.sf.javaml.core.Dataset;
 /**
  * Created by erik on 09/03/14.
  */
-public class SVMSimplePredictor extends SimplePredictor {
+public class SVMSimplePredictor extends StockPredictor {
 
     public SVMSimplePredictor() {
         super();

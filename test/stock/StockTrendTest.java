@@ -39,4 +39,10 @@ public class StockTrendTest {
         assertEquals(StockTrend.BEAR, StockTrend.trendFromCloseClose(high, low));
         assertEquals(StockTrend.BULL, StockTrend.trendFromCloseClose(low, high));
     }
+
+    @Test
+    public void trendFromNQuotesAverage throw Exception{
+
+    }
+
 }

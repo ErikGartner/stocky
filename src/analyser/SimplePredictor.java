@@ -1,6 +1,8 @@
 package analyser;
 
 import metrics.*;
+import metrics.derived.AverageCloseMetric;
+import metrics.derived.AverageVolumeMetric;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.classification.evaluation.CrossValidation;
 import net.sf.javaml.classification.evaluation.PerformanceMeasure;
@@ -8,13 +10,9 @@ import net.sf.javaml.core.Dataset;
 import net.sf.javaml.core.DefaultDataset;
 import net.sf.javaml.core.DenseInstance;
 import net.sf.javaml.core.Instance;
-import net.sf.javaml.featureselection.scoring.GainRatio;
 import stock.NQuotes;
-import stock.Quote;
-import stock.Stock;
 import stock.StockTrend;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -23,44 +21,44 @@ import java.util.Map;
  */
 public abstract class SimplePredictor extends StockPredictor {
 
-    public static final String[] DEFAULT_METRICS = {OpenMetric.NAME, CloseMetric.NAME, HighMetric.NAME,
-            LowMetric.NAME, VolumeMetric.NAME};
+    public static final String[] DEFAULT_METRICS = {AverageCloseMetric.NAME, AverageVolumeMetric.NAME};
 
     private String[] usedMetrics;
     protected double accuracy;
 
     protected SimplePredictor() {
-        this(DEFAULT_METRICS);
-    }
-
-    protected SimplePredictor(String[] usedMetrics) {
-        super();
-        this.usedMetrics = usedMetrics;
+        usedMetrics = DEFAULT_METRICS;
+        accuracy = -1;
     }
 
     public double accuracy() {
         return accuracy;
     }
 
-    protected StockTrend computePrediction() {
-
-        Dataset dataset = createDataset();
-        Instance target = getTarget();
-        return classify(target, dataset);
-
+    public void setUsedMetrics(String[] metricNames){
+        usedMetrics = metricNames;
     }
 
-    protected Dataset createDataset() {
-        List<Quote> quotes = stock.getQuotes();
-        Collections.sort(quotes);
+    protected StockTrend computePrediction() {
+
+        List<NQuotes> nQuotesList = stock.getNQuotes(5);
+        Dataset dataset = createDataset(nQuotesList);
+        Instance target = getTarget(nQuotesList);
+        Classifier classifier = classifier(dataset);
+        accuracy = crossValidateAccuracy(classifier, dataset);
+        classifier.buildClassifier(dataset);
+        return (StockTrend) classifier.classify(target);
+    }
+
+    protected Dataset createDataset(List<NQuotes> nQuotesList) {
         Dataset dataset = new DefaultDataset();
 
-        for (int i = 0; i < quotes.size() - 1; i++) {
+        for (int i = 0; i < nQuotesList.size() - 1; i++) {
 
-            Quote q_prev = quotes.get(i);
-            Quote q_next = quotes.get(i + 1);
+            NQuotes q_prev = nQuotesList.get(i);
+            NQuotes q_next = nQuotesList.get(i + 1);
             Instance instance = getInstance(q_prev);
-            instance.setClassValue(StockTrend.trendFromCloseClose(q_prev, q_next));
+            instance.setClassValue(StockTrend.trendFromNQuotesAverage(q_prev, q_next));
             dataset.add(instance);
 
         }
@@ -68,31 +66,27 @@ public abstract class SimplePredictor extends StockPredictor {
         return dataset;
     }
 
-    protected Instance getInstance(Quote quote) {
+    protected Instance getInstance(NQuotes nQuotes) {
 
+        List<StockMetric> stockMetrics = nQuotes.getMetrics();
         double values[] = new double[usedMetrics.length];
-        for (int i = 0; i < usedMetrics.length; i++) {
-            values[i] = quote.getMetric(usedMetrics[i]).getValue();
+        for(int i = 0; i < values.length; i++){
+            values[i] = stockMetrics.get(i).getValue();
         }
         return new DenseInstance(values);
 
     }
 
-    protected Instance getTarget() {
-
-        List<Quote> quotes = stock.getQuotes();
-        Collections.sort(quotes);
-        return getInstance(quotes.get(quotes.size() - 1));
-
+    protected Instance getTarget(List<NQuotes> nQuotesList) {
+          return getInstance(nQuotesList.get(nQuotesList.size() - 1));
     }
 
     /**
      * Computes the accuracy of an classifier on the dataset
      */
     protected double crossValidateAccuracy(Classifier classifier, Dataset dataset) {
-
         CrossValidation cv = new CrossValidation(classifier);
-        Map<Object, PerformanceMeasure> performances = cv.crossValidation(dataset, 5);
+        Map<Object, PerformanceMeasure> performances = cv.crossValidation(dataset, 10);
 
         double newAccuracy = 0.0;
         for (PerformanceMeasure pm : performances.values()) {
@@ -102,8 +96,9 @@ public abstract class SimplePredictor extends StockPredictor {
     }
 
     /**
-     * Should set the accuracy variable.
+     * Returns the used classifier.
+     * @param dataset
      */
-    protected abstract StockTrend classify(Instance target, Dataset dataset);
+    protected abstract Classifier classifier(Dataset dataset);
 
 }

@@ -2,9 +2,7 @@ package analyser;
 
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.core.Dataset;
-import net.sf.javaml.core.Instance;
 import net.sf.javaml.tools.weka.WekaClassifier;
-import stock.StockTrend;
 import weka.classifiers.bayes.NaiveBayes;
 
 /**
@@ -12,23 +10,14 @@ import weka.classifiers.bayes.NaiveBayes;
  */
 public class NBayesSimplePredictor extends SimplePredictor {
 
-    public NBayesSimplePredictor(String[] usedMetrics) {
-        super(usedMetrics);
-    }
-
     public NBayesSimplePredictor() {
         super();
     }
 
     @Override
-    protected StockTrend classify(Instance target, Dataset dataset) {
-
+    protected Classifier classifier(Dataset dataset) {
         NaiveBayes nb = new NaiveBayes();
-        Classifier classifier = new WekaClassifier(nb);
-        accuracy = crossValidateAccuracy(classifier, dataset);
-        classifier.buildClassifier(dataset);
-        return (StockTrend) classifier.classify(target);
-
+        return new WekaClassifier(nb);
     }
 
     @Override

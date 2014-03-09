@@ -2,9 +2,7 @@ package analyser;
 
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.core.Dataset;
-import net.sf.javaml.core.Instance;
 import net.sf.javaml.tools.weka.WekaClassifier;
-import stock.StockTrend;
 import weka.classifiers.functions.Logistic;
 
 /**
@@ -12,21 +10,15 @@ import weka.classifiers.functions.Logistic;
  */
 public class LogisticSimplePredictor extends SimplePredictor {
 
-    public LogisticSimplePredictor(String[] usedMetrics) {
-        super(usedMetrics);
-    }
-
     public LogisticSimplePredictor() {
         super();
     }
 
     @Override
-    protected StockTrend classify(Instance target, Dataset dataset) {
+    protected Classifier classifier(Dataset dataset) {
         Logistic lr = new Logistic();
-        Classifier classifier = new WekaClassifier(lr);
-        accuracy = crossValidateAccuracy(classifier, dataset);
-        classifier.buildClassifier(dataset);
-        return (StockTrend) classifier.classify(target);
+        return new WekaClassifier(lr);
+
     }
 
     @Override

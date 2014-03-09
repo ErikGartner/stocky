@@ -1,6 +1,7 @@
 package stock;
 
 import metrics.derived.AverageCloseMetric;
+import metrics.derived.AverageVolumeMetric;
 import metrics.derived.NQStockMetric;
 import metrics.StockMetric;
 
@@ -46,6 +47,7 @@ public class NQuotes {
 
     private void computeMetrics(){
         metrics.put(AverageCloseMetric.NAME, AverageCloseMetric.createMetric(this));
+        metrics.put(AverageVolumeMetric.NAME, AverageVolumeMetric.createMetric(this));
     }
 
     public static List<NQuotes> createNQuotes(List<Quote> quotes, int n){

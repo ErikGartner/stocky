@@ -1,7 +1,6 @@
 package analyser;
 
 import metrics.StockMetric;
-import metrics.VolumeMetric;
 import metrics.derived.AverageCloseMetric;
 import metrics.derived.AverageVolumeMetric;
 import net.sf.javaml.classification.Classifier;
@@ -80,7 +79,7 @@ public abstract class StockPredictor {
             NQuotes q_prev = nQuotesList.get(i);
             NQuotes q_next = nQuotesList.get(i + 1);
             Instance instance = getInstance(q_prev);
-            instance.setClassValue(StockTrend.trendFromNQuotesAverage(q_prev, q_next));
+            instance.setClassValue(StockTrend.trendFromNQuotesClose(q_prev, q_next));
             dataset.add(instance);
 
         }
@@ -100,7 +99,6 @@ public abstract class StockPredictor {
     }
 
     protected Instance getTarget(List<NQuotes> nQuotesList) {
-        System.out.println(nQuotesList.get(nQuotesList.size() - 1));
         return getInstance(nQuotesList.get(nQuotesList.size() - 1));
     }
 

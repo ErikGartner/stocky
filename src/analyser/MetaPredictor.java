@@ -46,7 +46,6 @@ public abstract class MetaPredictor extends StockPredictor {
 
     /**
      * This method is VERY slow, and for that reason isn't currently used.
-     * @return
      */
     protected double crossValidateAccuracy(){
 

@@ -22,13 +22,11 @@ public class LogisticSimplePredictor extends SimplePredictor {
 
     @Override
     protected StockTrend classify(Instance target, Dataset dataset) {
-
         Logistic lr = new Logistic();
         Classifier classifier = new WekaClassifier(lr);
         accuracy = crossValidateAccuracy(classifier, dataset);
         classifier.buildClassifier(dataset);
         return (StockTrend) classifier.classify(target);
-
     }
 
     @Override

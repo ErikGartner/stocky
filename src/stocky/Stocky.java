@@ -4,6 +4,8 @@ import analyser.*;
 import dataloader.StockDataLoader;
 import dataloader.YahooStockLoader;
 import org.joda.time.LocalDate;
+import stock.NQuotes;
+import stock.Quote;
 import stock.Stock;
 
 import java.util.ArrayList;
@@ -37,11 +39,10 @@ public class Stocky {
 
         for (Stock stock : stocks) {
 
-            StockPredictor predictor3 = new VoteMetaPredictor(predictors);
-            predictor3.buildPredictor(stock);
+            predictor.buildPredictor(stock);
 
-            System.out.println(predictor3.toString());
-            System.out.println(stock.getName() + ": " + predictor3.prediction());
+            System.out.println(predictor.toString());
+            System.out.println(stock.getName() + ": " + predictor.prediction());
 
         }
 

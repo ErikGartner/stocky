@@ -37,6 +37,10 @@ public class Stock {
         return new ArrayList<Quote>(quotes);
     }
 
+    public List<NQuotes> getNQuotes(int n){
+        return NQuotes.createNQuotes(getQuotes(), n);
+    }
+
     public String getName() {
         return name;
     }

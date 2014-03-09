@@ -26,4 +26,9 @@ public abstract class StockMetric {
         return String.format("%s: %f", name, value);
     }
 
+    @Override
+    public int hashCode(){
+        return name.hashCode();
+    }
+
 }

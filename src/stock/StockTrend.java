@@ -1,5 +1,6 @@
 package stock;
 
+import metrics.derived.AverageCloseMetric;
 import metrics.CloseMetric;
 import metrics.OpenMetric;
 
@@ -19,6 +20,10 @@ public enum StockTrend {
 
     public static StockTrend trendFromCloseClose(Quote before, Quote after) {
         return before.getMetric(CloseMetric.NAME).getValue() < after.getMetric(CloseMetric.NAME).getValue() ? BULL : BEAR;
+    }
+
+    public static StockTrend trendFromNQuotesAverage(NQuotes before, NQuotes after){
+        return before.getMetric(AverageCloseMetric.NAME).getValue() < after.getMetric(AverageCloseMetric.NAME).getValue() ? BULL : BEAR;
     }
 
 }

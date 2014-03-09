@@ -8,6 +8,8 @@ import net.sf.javaml.core.Dataset;
 import net.sf.javaml.core.DefaultDataset;
 import net.sf.javaml.core.DenseInstance;
 import net.sf.javaml.core.Instance;
+import net.sf.javaml.featureselection.scoring.GainRatio;
+import stock.NQuotes;
 import stock.Quote;
 import stock.Stock;
 import stock.StockTrend;
@@ -49,7 +51,6 @@ public abstract class SimplePredictor extends StockPredictor {
     }
 
     protected Dataset createDataset() {
-
         List<Quote> quotes = stock.getQuotes();
         Collections.sort(quotes);
         Dataset dataset = new DefaultDataset();
@@ -65,7 +66,6 @@ public abstract class SimplePredictor extends StockPredictor {
         }
 
         return dataset;
-
     }
 
     protected Instance getInstance(Quote quote) {

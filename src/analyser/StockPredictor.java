@@ -22,7 +22,7 @@ import java.util.Map;
  */
 public abstract class StockPredictor {
 
-    public static final String[] DEFAULT_METRICS = {AverageCloseMetric.NAME, AverageVolumeMetric.NAME};
+    public static final String[] DEFAULT_METRICS = {AverageCloseMetric.NAME};
 
     protected Stock stock;
     protected StockTrend predicted;

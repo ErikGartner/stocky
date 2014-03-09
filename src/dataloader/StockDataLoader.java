@@ -5,6 +5,7 @@ import stock.Stock;
 
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,6 +26,7 @@ public abstract class StockDataLoader {
 
     protected String readFromURL(String url) {
         try {
+            String encodedUrl = URLEncoder.encode(url, "UTF-8");
             return new Scanner(new URL(url).openStream(), "UTF-8").useDelimiter("\\A").next();
         } catch (IOException e) {
             throw new RuntimeException("Failed to read from url: " + url);

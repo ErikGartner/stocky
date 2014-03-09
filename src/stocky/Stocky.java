@@ -3,6 +3,8 @@ package stocky;
 import analyser.*;
 import dataloader.StockDataLoader;
 import dataloader.YahooStockLoader;
+import net.pushover.client.PushoverClient;
+import net.pushover.client.PushoverRestClient;
 import org.joda.time.LocalDate;
 import stock.Stock;
 
@@ -18,10 +20,11 @@ public class Stocky {
 
     public static void main(String[] args) {
 
+        PushoverNotifier notifier = new PushoverNotifier();
         List<String> symbols = new ArrayList<String>();
         symbols.add("AAPL");
-        symbols.add("%5EOMX");
-        symbols.add("%5EBSESN");
+        symbols.add("^OMX");
+        symbols.add("^BSESN");
         LocalDate start = LocalDate.parse("2000-01-01");
         LocalDate end = LocalDate.parse("2014-03-09");
         StockDataLoader loader = new YahooStockLoader(symbols, start, end);
@@ -52,11 +55,11 @@ public class Stocky {
         for (Stock stock : stocks) {
 
             metaPredictor.buildPredictor(stock);
-
             System.out.println(metaPredictor.toString());
             System.out.println(stock.getName() + ": " + metaPredictor.prediction());
 
         }
+
     }
 
 }

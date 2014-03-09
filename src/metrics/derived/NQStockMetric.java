@@ -20,7 +20,7 @@ public abstract class NQStockMetric extends StockMetric {
         List<Quote> quotes = nQuotes.getQuotes();
         double total = 0.0;
         for (Quote q : quotes) {
-            StockMetric sm = q.getMetric(CloseMetric.NAME);
+            StockMetric sm = q.getMetric(metricName);
             if (sm == null)
                 throw new RuntimeException("Missing required metric: " + metricName);
             total += sm.getValue();

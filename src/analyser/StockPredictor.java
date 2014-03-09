@@ -1,7 +1,9 @@
 package analyser;
 
 import metrics.StockMetric;
+import metrics.VolumeMetric;
 import metrics.derived.AverageCloseMetric;
+import metrics.derived.AverageVolumeMetric;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.classification.evaluation.CrossValidation;
 import net.sf.javaml.classification.evaluation.PerformanceMeasure;
@@ -21,7 +23,7 @@ import java.util.Map;
  */
 public abstract class StockPredictor {
 
-    public static final String[] DEFAULT_METRICS = {AverageCloseMetric.NAME};
+    public static final String[] DEFAULT_METRICS = {AverageCloseMetric.NAME, AverageVolumeMetric.NAME};
 
     protected Stock stock;
     protected StockTrend predicted;
@@ -98,6 +100,7 @@ public abstract class StockPredictor {
     }
 
     protected Instance getTarget(List<NQuotes> nQuotesList) {
+        System.out.println(nQuotesList.get(nQuotesList.size() - 1));
         return getInstance(nQuotesList.get(nQuotesList.size() - 1));
     }
 

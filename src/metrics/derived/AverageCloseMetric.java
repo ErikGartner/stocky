@@ -1,6 +1,7 @@
 package metrics.derived;
 
 import metrics.AdjustedCloseMetric;
+import metrics.CloseMetric;
 import stock.NQuotes;
 
 /**
@@ -15,8 +16,7 @@ public class AverageCloseMetric extends NQStockMetric {
     }
 
     public static NQStockMetric createMetric(NQuotes nQuotes) {
-        return new AverageCloseMetric(average(AdjustedCloseMetric.NAME, nQuotes));
+        return new AverageCloseMetric(average(CloseMetric.NAME, nQuotes));
     }
-
 
 }

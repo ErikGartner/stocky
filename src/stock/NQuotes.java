@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * Created by erik on 09/03/14.
  */
-public class NQuotes {
+public class NQuotes implements Comparable<NQuotes> {
 
     private List<Quote> quotes;
     private Map<String, NQStockMetric> metrics;
@@ -55,7 +55,12 @@ public class NQuotes {
         for (int i = 0; i + n < quotes.size(); i = i + n) {
             nQuotesList.add(new NQuotes(quotes.subList(i, i + n)));
         }
+        Collections.sort(nQuotesList);
         return nQuotesList;
     }
 
+    @Override
+    public int compareTo(NQuotes nQuotes) {
+        return quotes.get(0).compareTo(nQuotes.quotes.get(0));
+    }
 }

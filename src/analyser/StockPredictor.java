@@ -1,8 +1,8 @@
 package analyser;
 
 import metrics.StockMetric;
-import metrics.derived.AverageCloseMetric;
-import metrics.derived.AverageVolumeMetric;
+import metrics.VolumeMetric;
+import metrics.derived.*;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.classification.evaluation.CrossValidation;
 import net.sf.javaml.classification.evaluation.PerformanceMeasure;
@@ -10,10 +10,12 @@ import net.sf.javaml.core.Dataset;
 import net.sf.javaml.core.DefaultDataset;
 import net.sf.javaml.core.DenseInstance;
 import net.sf.javaml.core.Instance;
+import net.sf.javaml.featureselection.scoring.GainRatio;
 import stock.NQuotes;
 import stock.Stock;
 import stock.StockTrend;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,13 +24,17 @@ import java.util.Map;
  */
 public abstract class StockPredictor {
 
-    public static final String[] DEFAULT_METRICS = {AverageCloseMetric.NAME, AverageVolumeMetric.NAME};
+    public static final String[] DEFAULT_METRICS = {MeanChangeMetric.NAME,
+                                                    MeanCloseMetric.NAME,
+                                                    MeanVolumeMetric.NAME,
+                                                    VolatilityMetric.NAME};
 
     protected Stock stock;
     private StockTrend predicted;
     private String[] usedMetrics;
     private double accuracy;
     private int scope;
+    private Map<String, Double> featureScores;
 
     protected StockPredictor() {
         accuracy = -1;
@@ -56,7 +62,17 @@ public abstract class StockPredictor {
     }
 
     public double accuracy() {
+        if (accuracy == -1) {
+            throw new RuntimeException("Predictor not built.");
+        }
         return accuracy;
+    }
+
+    public Map<String, Double> featureScores(){
+        if (featureScores == null) {
+            throw new RuntimeException("Predictor not built.");
+        }
+        return featureScores;
     }
 
     public void setUsedMetrics(String[] metricNames) {
@@ -73,6 +89,7 @@ public abstract class StockPredictor {
         Instance target = getTarget(nQuotesList);
         Classifier classifier = classifier(dataset);
         accuracy = crossValidateAccuracy(classifier, dataset);
+        featureScores = scoreFeatures(dataset);
         classifier.buildClassifier(dataset);
         return (StockTrend) classifier.classify(target);
     }
@@ -120,6 +137,16 @@ public abstract class StockPredictor {
             newAccuracy += pm.getAccuracy();
         }
         return newAccuracy / performances.size();
+    }
+
+    protected Map<String, Double> scoreFeatures(Dataset dataset){
+        Map<String, Double> scores = new HashMap<String, Double>();
+        GainRatio gainRatio = new GainRatio();
+        gainRatio.build(dataset);
+        for(int i = 0; i < DEFAULT_METRICS.length; i++){
+            scores.put(DEFAULT_METRICS[i], gainRatio.score(i));
+        }
+        return scores;
     }
 
     protected abstract String getName();

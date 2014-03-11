@@ -1,9 +1,7 @@
 package stock;
 
 import metrics.StockMetric;
-import metrics.derived.AverageCloseMetric;
-import metrics.derived.AverageVolumeMetric;
-import metrics.derived.NQStockMetric;
+import metrics.derived.*;
 
 import java.util.*;
 
@@ -37,6 +35,10 @@ public class NQuotes implements Comparable<NQuotes> {
         return metrics.keySet();
     }
 
+    public int getN(){
+        return quotes.size();
+    }
+
     public StockMetric getMetric(String name) {
         return metrics.get(name);
     }
@@ -46,8 +48,16 @@ public class NQuotes implements Comparable<NQuotes> {
     }
 
     private void computeMetrics() {
-        metrics.put(AverageCloseMetric.NAME, AverageCloseMetric.createMetric(this));
-        metrics.put(AverageVolumeMetric.NAME, AverageVolumeMetric.createMetric(this));
+        metrics.put(MeanCloseMetric.NAME, MeanCloseMetric.createMetric(this));
+        metrics.put(MeanVolumeMetric.NAME, MeanVolumeMetric.createMetric(this));
+        metrics.put(MeanChangeMetric.NAME, MeanChangeMetric.createMetric(this));
+        metrics.put(HighToMeanMetric.NAME, HighToMeanMetric.createMetric(this));
+        metrics.put(VolatilityMetric.NAME, VolatilityMetric.createMetric(this));
+    }
+
+    @Override
+    public int compareTo(NQuotes nQuotes) {
+        return quotes.get(0).compareTo(nQuotes.quotes.get(0));
     }
 
     public static List<NQuotes> createNQuotes(List<Quote> quotes, int n) {
@@ -57,10 +67,5 @@ public class NQuotes implements Comparable<NQuotes> {
         }
         Collections.sort(nQuotesList);
         return nQuotesList;
-    }
-
-    @Override
-    public int compareTo(NQuotes nQuotes) {
-        return quotes.get(0).compareTo(nQuotes.quotes.get(0));
     }
 }

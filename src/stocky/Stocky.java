@@ -20,9 +20,9 @@ public class Stocky {
 
         PushoverNotifier notifier = new PushoverNotifier();
         List<String> symbols = new ArrayList<String>();
-        symbols.add("AAPL");
+     //   symbols.add("AAPL");
         symbols.add("^OMX");
-        symbols.add("^BSESN");
+       // symbols.add("^BSESN");
         LocalDate start = LocalDate.parse("2000-01-01");
         LocalDate end = LocalDate.parse("2014-03-09");
         StockDataLoader loader = new YahooStockLoader(symbols, start, end);
@@ -36,8 +36,11 @@ public class Stocky {
         predictors.add(predictor);
         predictors.add(predictor1);
         predictors.add(predictor2);
-        predictor1.setScope(30);
-        predictors.add(predictor3);
+//        predictor.setScope(30);
+//        predictor1.setScope(30);
+//        predictor2.setScope(30);
+//        predictor3.setScope(30);
+//        predictors.add(predictor3);
         StockPredictor metaPredictor = new BootstrappingPredictor(predictors);
 
         for (StockPredictor sp : predictors) {
@@ -46,6 +49,7 @@ public class Stocky {
                 sp.buildPredictor(stock);
 
                 System.out.println(sp.toString());
+                System.out.println(sp.featureScores());
                 System.out.println(stock.getName() + ": " + sp.prediction());
 
             }
@@ -55,6 +59,7 @@ public class Stocky {
 
             metaPredictor.buildPredictor(stock);
             System.out.println(metaPredictor.toString());
+            System.out.println(metaPredictor.featureScores());
             System.out.println(stock.getName() + ": " + metaPredictor.prediction());
 
         }

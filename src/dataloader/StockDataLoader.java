@@ -27,7 +27,11 @@ public abstract class StockDataLoader {
     protected String readFromURL(String url) {
         try {
             String encodedUrl = URLEncoder.encode(url, "UTF-8");
-            return new Scanner(new URL(url).openStream(), "UTF-8").useDelimiter("\\A").next();
+            Scanner scan = new Scanner(new URL(url).openStream(), "UTF-8");
+            scan.useDelimiter("\\A");
+            String data = scan.next();
+            scan.close();
+            return data;
         } catch (IOException e) {
             throw new RuntimeException("Failed to read from url: " + url);
         }

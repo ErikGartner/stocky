@@ -2,9 +2,13 @@ package stock;
 
 import metrics.CloseMetric;
 import metrics.OpenMetric;
+import metrics.StockMetric;
 import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,14 +22,18 @@ public class StockTrendTest {
 
     @Before
     public void setUp() throws Exception {
-        low = new Quote(LocalDate.now());
-        high = new Quote(LocalDate.now());
 
-        low.addMetric(new OpenMetric(100));
-        low.addMetric(new CloseMetric(50));
+        List<StockMetric> lowsMetric = new ArrayList<StockMetric>();
+        List<StockMetric> highsMetric = new ArrayList<StockMetric>();
 
-        high.addMetric(new OpenMetric(200));
-        high.addMetric(new CloseMetric(300));
+        lowsMetric.add(new OpenMetric(100));
+        lowsMetric.add(new CloseMetric(50));
+        low = new Quote(LocalDate.now(), lowsMetric);
+
+        highsMetric.add(new OpenMetric(200));
+        highsMetric.add(new CloseMetric(300));
+        high = new Quote(LocalDate.now(), highsMetric);
+
     }
 
     @Test

@@ -6,21 +6,28 @@ import metrics.derived.*;
 import java.util.*;
 
 /**
+ * Immutable class containing N Quotes.
  * Created by erik on 09/03/14.
  */
 public class NQuotes implements Comparable<NQuotes> {
 
     private List<Quote> quotes;
     private Map<String, NQStockMetric> metrics;
+    private int first, last;
 
-    public NQuotes(List<Quote> quotes) {
+    public NQuotes(List<Quote> quotes, int first, int last) {
         this.quotes = quotes;
-        Collections.sort(quotes);
+        this.first = first;
+        this.last = last;
         metrics = new HashMap<String, NQStockMetric>();
         computeMetrics();
     }
 
     public List<Quote> getQuotes() {
+        return new ArrayList<Quote>(quotes.subList(first, last));
+    }
+
+    public List<Quote> getAllQuotes() {
         return new ArrayList<Quote>(quotes);
     }
 
@@ -31,12 +38,16 @@ public class NQuotes implements Comparable<NQuotes> {
                 metrics.values());
     }
 
-    public Set<String> availableMetrics() {
-        return metrics.keySet();
+    public int getFirst() {
+        return first;
+    }
+
+    public int getLast() {
+        return last;
     }
 
     public int getN(){
-        return quotes.size();
+        return last - first;
     }
 
     public StockMetric getMetric(String name) {
@@ -47,6 +58,11 @@ public class NQuotes implements Comparable<NQuotes> {
         return new ArrayList<StockMetric>(metrics.values());
     }
 
+    @Override
+    public int compareTo(NQuotes nQuotes) {
+        return quotes.get(0).compareTo(nQuotes.quotes.get(0));
+    }
+
     private void computeMetrics() {
         metrics.put(MeanCloseMetric.NAME, MeanCloseMetric.createMetric(this));
         metrics.put(MeanVolumeMetric.NAME, MeanVolumeMetric.createMetric(this));
@@ -55,15 +71,10 @@ public class NQuotes implements Comparable<NQuotes> {
         metrics.put(VolatilityMetric.NAME, VolatilityMetric.createMetric(this));
     }
 
-    @Override
-    public int compareTo(NQuotes nQuotes) {
-        return quotes.get(0).compareTo(nQuotes.quotes.get(0));
-    }
-
     public static List<NQuotes> createNQuotes(List<Quote> quotes, int n) {
         List<NQuotes> nQuotesList = new ArrayList<NQuotes>(quotes.size());
         for (int i = 0; i + n < quotes.size(); i = i + n) {
-            nQuotesList.add(new NQuotes(quotes.subList(i, i + n)));
+            nQuotesList.add(new NQuotes(quotes, i, i + n));
         }
         Collections.sort(nQuotesList);
         return nQuotesList;

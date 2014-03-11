@@ -8,6 +8,7 @@ import stock.Quote;
 import stock.Stock;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,8 +17,9 @@ import java.util.Scanner;
  */
 public class YahooStockLoader extends StockDataLoader {
 
-    private static final String URL = "http://ichart.finance.yahoo.com/table.csv?";
-    private static final String options = "s=%s&a=%d&b=%d&c=%d&d=%d&e=%d&f=%d&g=%s&ignore=.csv";
+    private static final String dataURL = "http://ichart.finance.yahoo.com/table.csv?";
+    private static final String dataURLOptions = "s=%s&a=%d&b=%d&c=%d&d=%d&e=%d&f=%d&g=%s&ignore=.csv";
+    private static final String nameURL = "http://finance.yahoo.com/d/quotes.csv?s=%s&f=n";
     private static final DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
 
     public YahooStockLoader(List<String> symbols, LocalDate start, LocalDate end) {
@@ -38,7 +40,7 @@ public class YahooStockLoader extends StockDataLoader {
      */
     private Stock getStock(String symbol) {
 
-        Stock stock = new Stock(symbol);
+        List<Quote> quotes = new LinkedList<Quote>();
 
         String data = readFromURL(queryUrl(symbol));
         Scanner scan = new Scanner(data);
@@ -51,26 +53,51 @@ public class YahooStockLoader extends StockDataLoader {
 
         while (scan.hasNext()) {
             LocalDate date = LocalDate.parse(scan.next(), formatter);
-            Quote q = new Quote(date);
+            List<StockMetric> metricList = new LinkedList<StockMetric>();
 
-            q.addMetric(new OpenMetric(Double.parseDouble(scan.next())));
-            q.addMetric(new HighMetric(Double.parseDouble(scan.next())));
-            q.addMetric(new LowMetric(Double.parseDouble(scan.next())));
-            q.addMetric(new CloseMetric(Double.parseDouble(scan.next())));
-            q.addMetric(new VolumeMetric(Double.parseDouble(scan.next())));
-            q.addMetric(new AdjustedCloseMetric(Double.parseDouble(scan.next())));
+            metricList.add(new OpenMetric(Double.parseDouble(scan.next())));
+            metricList.add(new HighMetric(Double.parseDouble(scan.next())));
+            metricList.add(new LowMetric(Double.parseDouble(scan.next())));
+            metricList.add(new CloseMetric(Double.parseDouble(scan.next())));
+            metricList.add(new VolumeMetric(Double.parseDouble(scan.next())));
+            metricList.add(new AdjustedCloseMetric(Double.parseDouble(scan.next())));
 
-            stock.addQuote(q);
+            quotes.add(new Quote(date, metricList));
         }
+
+        String name = fetchName(symbol);
+        Stock stock;
+        if (name.isEmpty()) {
+            stock = new Stock(symbol, quotes);
+        } else {
+            stock = new Stock(symbol, name, quotes);
+        }
+
         return stock;
     }
 
     /**
-     * Generates the appropriate yahoo request URL.
+     * Generates the appropriate yahoo request dataURL.
      */
     private String queryUrl(String symbol) {
-        return URL + String.format(options, symbol, start.getMonthOfYear() - 1, start.getDayOfMonth(), start.getYear(),
+        return dataURL + String.format(dataURLOptions, symbol, start.getMonthOfYear() - 1, start.getDayOfMonth(), start.getYear(),
                 end.getMonthOfYear() - 1, end.getDayOfMonth(), end.getYear(), "d");
+    }
+
+    /**
+     * Downloads the user friendly name from yahoo.
+     */
+    private String fetchName(String symbol) {
+
+        String url = String.format(nameURL, symbol);
+        String data = readFromURL(url);
+
+        if (data.length() < 3) {
+            return "";
+        } else {
+            return data.substring(1, data.length() - 3);
+        }
+
     }
 
 }

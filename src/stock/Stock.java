@@ -1,10 +1,11 @@
 package stock;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 
 /**
+ * Make the class immutable.
  * Created by erik on 04/03/14.
  */
 public class Stock {
@@ -13,24 +14,15 @@ public class Stock {
     private String name;
     private List<Quote> quotes;
 
-    public Stock(String name, String symbol) {
+    public Stock(String symbol, List<Quote> quotes) {
+        this(symbol, symbol, quotes);
+    }
+
+    public Stock(String symbol, String name, List<Quote> quotes) {
         this.name = name;
         this.symbol = symbol;
-        quotes = new LinkedList<Quote>();
-    }
-
-    public Stock(String symbol, List<Quote> quotes) {
-        this.name = symbol;
-        this.symbol = symbol;
-        this.quotes = new LinkedList<Quote>(quotes);
-    }
-
-    public Stock(String symbol) {
-        this(symbol, symbol);
-    }
-
-    public void addQuote(Quote q) {
-        quotes.add(q);
+        this.quotes = new ArrayList<Quote>(quotes);
+        Collections.sort(this.quotes);
     }
 
     public List<Quote> getQuotes() {

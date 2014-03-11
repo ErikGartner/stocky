@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59867882-1454-448d-9e71-e88f1920a865" name="Default" comment="Added parameter for NQuere size in predictors.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metrics/derived/MeanChangeMetric.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metrics/derived/MeanCloseMetric.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metrics/derived/MeanVolumeMetric.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/metrics/derived/VolatilityMetric.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metrics/derived/AverageCloseMetric.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/metrics/derived/AverageVolumeMetric.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" afterPath="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stock/NQuotes.java" afterPath="$PROJECT_DIR$/src/stock/NQuotes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/StockPredictor.java" afterPath="$PROJECT_DIR$/src/analyser/StockPredictor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stock/StockTrend.java" afterPath="$PROJECT_DIR$/src/stock/StockTrend.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stocky/Stocky.java" afterPath="$PROJECT_DIR$/src/stocky/Stocky.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StockPrediction.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,7 +78,7 @@
       <file leaf-file-name="ADXMetric.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/metrics/derived/ADXMetric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="29" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+            <state line="23" column="0" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,7 +129,7 @@
       <file leaf-file-name="NQStockMetric.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="33" selection-start="640" selection-end="640" vertical-scroll-proportion="0.4197349" vertical-offset="0" max-vertical-offset="705">
+            <state line="42" column="17" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.8173785" vertical-offset="0" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -241,8 +229,8 @@
         <option value="$PROJECT_DIR$/src/metrics/derived/volatilityMetric.java" />
         <option value="$PROJECT_DIR$/src/analyser/StockPredictor.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/VolatilityMetric.java" />
-        <option value="$PROJECT_DIR$/src/metrics/derived/ADXMetric.java" />
         <option value="$PROJECT_DIR$/src/stock/NQuotes.java" />
+        <option value="$PROJECT_DIR$/src/metrics/derived/ADXMetric.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" />
       </list>
     </option>
@@ -1098,15 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/metrics/derived/ADXMetric.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="29" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stock/NQuotes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="1" selection-start="2074" selection-end="2074" vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="1110">
@@ -1116,9 +1095,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/metrics/derived/ADXMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="33" selection-start="640" selection-end="640" vertical-scroll-proportion="0.4197349" vertical-offset="0" max-vertical-offset="705">
+        <state line="42" column="17" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.8173785" vertical-offset="0" max-vertical-offset="705">
           <folding />
         </state>
       </provider>

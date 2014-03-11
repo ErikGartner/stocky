@@ -40,7 +40,7 @@ public abstract class NQStockMetric extends StockMetric {
     }
 
     protected static double trueRange (){
-
+        return 0;
     }
 
 }

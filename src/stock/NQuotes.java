@@ -32,9 +32,9 @@ public class NQuotes implements Comparable<NQuotes> {
     }
 
     public String toString() {
-        return String.format("%dQuotes %s->%s with %s", quotes.size(),
-                quotes.get(0).getDate(),
-                quotes.get(quotes.size() - 1).getDate(),
+        return String.format("%dQuotes %s->%s with %s", getN(),
+                quotes.get(first).getDate(),
+                quotes.get(last).getDate(),
                 metrics.values());
     }
 
@@ -60,7 +60,7 @@ public class NQuotes implements Comparable<NQuotes> {
 
     @Override
     public int compareTo(NQuotes nQuotes) {
-        return quotes.get(0).compareTo(nQuotes.quotes.get(0));
+        return quotes.get(first).compareTo(nQuotes.quotes.get(nQuotes.first));
     }
 
     private void computeMetrics() {

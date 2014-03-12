@@ -1,7 +1,6 @@
 package analyser;
 
 import metrics.StockMetric;
-import metrics.VolumeMetric;
 import metrics.derived.*;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.classification.evaluation.CrossValidation;
@@ -27,7 +26,8 @@ public abstract class StockPredictor {
     public static final String[] DEFAULT_METRICS = {MeanChangeMetric.NAME,
                                                     MeanCloseMetric.NAME,
                                                     MeanVolumeMetric.NAME,
-                                                    VolatilityMetric.NAME};
+            VolatilityMetric.NAME,
+            ADXMetric.NAME};
 
     protected Stock stock;
     private StockTrend predicted;
@@ -106,7 +106,6 @@ public abstract class StockPredictor {
             dataset.add(instance);
 
         }
-
         return dataset;
     }
 

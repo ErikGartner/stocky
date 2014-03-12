@@ -1,6 +1,8 @@
 package metrics.derived;
 
 import metrics.CloseMetric;
+import metrics.HighMetric;
+import metrics.LowMetric;
 import metrics.StockMetric;
 import stock.NQuotes;
 import stock.Quote;
@@ -39,8 +41,11 @@ public abstract class NQStockMetric extends StockMetric {
         return Math.sqrt(totalDev / n);
     }
 
-    protected static double trueRange (){
-        return 0;
+    protected static double trueRange(Quote q, Quote prev) {
+        double high = q.getMetric(HighMetric.NAME).getValue();
+        double low = q.getMetric(LowMetric.NAME).getValue();
+        double closePrev = prev.getMetric(CloseMetric.NAME).getValue();
+        return Math.max(high - low, Math.max(Math.abs(high - closePrev), Math.abs(low - closePrev)));
     }
 
 }

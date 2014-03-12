@@ -69,6 +69,7 @@ public class NQuotes implements Comparable<NQuotes> {
         metrics.put(MeanChangeMetric.NAME, MeanChangeMetric.createMetric(this));
         metrics.put(HighToMeanMetric.NAME, HighToMeanMetric.createMetric(this));
         metrics.put(VolatilityMetric.NAME, VolatilityMetric.createMetric(this));
+        metrics.put(ADXMetric.NAME, ADXMetric.createMetric(this));
     }
 
     public static List<NQuotes> createNQuotes(List<Quote> quotes, int n) {

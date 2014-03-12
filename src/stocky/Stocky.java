@@ -4,6 +4,7 @@ import analyser.*;
 import dataloader.StockDataLoader;
 import dataloader.YahooStockLoader;
 import org.joda.time.LocalDate;
+import stock.NQuotes;
 import stock.Stock;
 
 import java.util.ArrayList;
@@ -20,13 +21,18 @@ public class Stocky {
 
         PushoverNotifier notifier = new PushoverNotifier();
         List<String> symbols = new ArrayList<String>();
-//        symbols.add("AAPL");
+        symbols.add("AAPL");
 //        symbols.add("AXS");
-        symbols.add("^OMX");
+//        symbols.add("^OMX");
         LocalDate start = LocalDate.parse("2000-01-01");
         LocalDate end = LocalDate.parse("2014-03-09");
         StockDataLoader loader = new YahooStockLoader(symbols, start, end);
         List<Stock> stocks = loader.createStockList();
+
+        List<NQuotes> nQuotes = stocks.get(0).getNQuotes(5);
+        for(NQuotes nq : nQuotes){
+            System.out.println(nq);
+        }
 
         StockPredictor predictor = new KNNSimplePredictor();
         StockPredictor predictor1 = new LogisticSimplePredictor();

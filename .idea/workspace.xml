@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59867882-1454-448d-9e71-e88f1920a865" name="Default" comment="Made NQuote and Quote immuatable. NQuote now contains all Quotes useful for computing certain metrics.&#10;YahooStockLoader now fetches the name of the stock.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metrics/derived/ADXMetric.java" afterPath="$PROJECT_DIR$/src/metrics/derived/ADXMetric.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" afterPath="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stock/NQuotes.java" afterPath="$PROJECT_DIR$/src/stock/NQuotes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/StockPredictor.java" afterPath="$PROJECT_DIR$/src/analyser/StockPredictor.java" />
+    <list default="true" id="59867882-1454-448d-9e71-e88f1920a865" name="Default" comment="Implemented ADX. See notes.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java" afterPath="$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stocky/Stocky.java" afterPath="$PROJECT_DIR$/src/stocky/Stocky.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StockPrediction.iws" />
@@ -70,10 +68,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StockPredictor.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StockPredictor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyser/StockPredictor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="23" selection-start="3399" selection-end="3399" vertical-scroll-proportion="0.553288" vertical-offset="1076" max-vertical-offset="2205">
+            <state line="108" column="23" selection-start="3290" selection-end="3290" vertical-scroll-proportion="0.0" vertical-offset="1076" max-vertical-offset="2205">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockMetric.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/metrics/StockMetric.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="30" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HighToMeanMetric.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="1" selection-start="803" selection-end="803" vertical-scroll-proportion="0.82004553" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
@@ -91,19 +107,10 @@
       <file leaf-file-name="ADXMetric.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/metrics/derived/ADXMetric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="1110">
+            <state line="29" column="29" selection-start="713" selection-end="722" vertical-scroll-proportion="0.0" vertical-offset="626" max-vertical-offset="1080">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HighToMeanMetric.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="361" selection-end="682" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="465">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -120,7 +127,7 @@
       <file leaf-file-name="NQuotes.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stock/NQuotes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="29" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1230">
+            <state line="79" column="38" selection-start="2347" selection-end="2347" vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="1230">
               <folding />
             </state>
           </provider>
@@ -129,16 +136,7 @@
       <file leaf-file-name="Quote.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stock/Quote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="63" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="825">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StockTrend.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stock/StockTrend.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="525">
+            <state line="36" column="62" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -218,20 +216,20 @@
         <option value="$PROJECT_DIR$/src/metrics/derived/AverageCloseMetric.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/MeanCloseMetric.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/MeanChangeMetric.java" />
-        <option value="$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/VolativityMetric.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/volatilityMetric.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/VolatilityMetric.java" />
-        <option value="$PROJECT_DIR$/src/stock/Quote.java" />
         <option value="$PROJECT_DIR$/test/stock/StockTrendTest.java" />
         <option value="$PROJECT_DIR$/src/stock/Stock.java" />
-        <option value="$PROJECT_DIR$/src/stocky/Stocky.java" />
         <option value="$PROJECT_DIR$/src/dataloader/YahooStockLoader.java" />
         <option value="$PROJECT_DIR$/src/dataloader/StockDataLoader.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java" />
-        <option value="$PROJECT_DIR$/src/stock/NQuotes.java" />
         <option value="$PROJECT_DIR$/src/metrics/derived/ADXMetric.java" />
         <option value="$PROJECT_DIR$/src/analyser/StockPredictor.java" />
+        <option value="$PROJECT_DIR$/src/stock/Quote.java" />
+        <option value="$PROJECT_DIR$/src/stock/NQuotes.java" />
+        <option value="$PROJECT_DIR$/src/stocky/Stocky.java" />
+        <option value="$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java" />
       </list>
     </option>
   </component>
@@ -739,9 +737,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3260274" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3260274" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -791,7 +789,8 @@
     <MESSAGE value="Removed print outs." />
     <MESSAGE value="Added parameter for NQuere size in predictors." />
     <MESSAGE value="Made NQuote and Quote immuatable. NQuote now contains all Quotes useful for computing certain metrics.&#10;YahooStockLoader now fetches the name of the stock." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made NQuote and Quote immuatable. NQuote now contains all Quotes useful for computing certain metrics.&#10;YahooStockLoader now fetches the name of the stock." />
+    <MESSAGE value="Implemented ADX. See notes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented ADX. See notes." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -931,11 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/metrics/StockMetric.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="30" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/CloseMetric.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="106" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
@@ -1011,13 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="361" selection-end="682" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1076,27 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stocky/Stocky.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="41" selection-start="920" selection-end="920" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stock/Quote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="63" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stock/Stock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="31" selection-start="301" selection-end="301" vertical-scroll-proportion="0.26509574" vertical-offset="0" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dataloader/StockDataLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="31" selection-start="713" selection-end="713" vertical-scroll-proportion="0.48600882" vertical-offset="0" max-vertical-offset="679">
@@ -1125,13 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stock/NQuotes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="29" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="0" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="750">
@@ -1139,18 +1098,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyser/StockPredictor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="23" selection-start="3290" selection-end="3290" vertical-scroll-proportion="0.0" vertical-offset="1076" max-vertical-offset="2205">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metrics/StockMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="30" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stock/Quote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="62" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stock/Stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="23" selection-start="1079" selection-end="1079" vertical-scroll-proportion="1.23918" vertical-offset="86" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/derived/ADXMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="1110">
+        <state line="29" column="29" selection-start="713" selection-end="722" vertical-scroll-proportion="0.0" vertical-offset="626" max-vertical-offset="1080">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyser/StockPredictor.java">
+    <entry file="file://$PROJECT_DIR$/src/stocky/Stocky.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="23" selection-start="3399" selection-end="3399" vertical-scroll-proportion="0.553288" vertical-offset="1076" max-vertical-offset="2205">
+        <state line="33" column="33" selection-start="969" selection-end="969" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stock/NQuotes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="38" selection-start="2347" selection-end="2347" vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="1" selection-start="803" selection-end="803" vertical-scroll-proportion="0.82004553" vertical-offset="0" max-vertical-offset="465">
           <folding />
         </state>
       </provider>

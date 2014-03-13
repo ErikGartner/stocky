@@ -3,13 +3,10 @@ package stocky;
 import analyser.*;
 import dataloader.StockDataLoader;
 import dataloader.YahooStockLoader;
-import metrics.derived.MeanChangeMetric;
-import metrics.derived.MeanCloseMetric;
-import metrics.derived.VolatilityMetric;
 import org.joda.time.LocalDate;
-import stock.NQuotes;
 import stock.Stock;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,37 +16,33 @@ import java.util.List;
 public class Stocky {
 
     public static final boolean DEBUG = true;
+    public static PushoverNotifier notifier;
+    public static Settings settings;
 
     public static void main(String[] args) {
 
-        PushoverNotifier notifier = new PushoverNotifier();
-        List<String> symbols = new ArrayList<String>();
-        symbols.add("AAPL");
-        symbols.add("AXS");
-        symbols.add("^OMX");
-        LocalDate start = LocalDate.parse("2000-01-01");
-        LocalDate end = LocalDate.parse("2014-03-09");
-        String[] metrics = {MeanChangeMetric.NAME,
-                MeanCloseMetric.NAME,
-                //MeanVolumeMetric.NAME,
-                VolatilityMetric.NAME};
-        //ADXMetric.NAME};
-        StockDataLoader loader = new YahooStockLoader(symbols, start, end);
+        try {
+            settings = Settings.readSettings("config.json");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        notifier = new PushoverNotifier(settings.getPushoverRecipients());
+
+        LocalDate start = LocalDate.parse(settings.getStart());
+        LocalDate end = LocalDate.parse(settings.getEnd());
+        StockDataLoader loader = new YahooStockLoader(settings.getSymbols(), start, end);
         List<Stock> stocks = loader.createStockList();
 
-        List<NQuotes> nQuotes = stocks.get(0).getNQuotes(5);
-        for(NQuotes nq : nQuotes){
-            //       System.out.println(nq);
-        }
 
         StockPredictor predictor = new KNNSimplePredictor();
         StockPredictor predictor1 = new LogisticSimplePredictor();
         StockPredictor predictor2 = new NBayesSimplePredictor();
         StockPredictor predictor3 = new SVMSimplePredictor();
-        predictor.setUsedMetrics(metrics);
-        predictor1.setUsedMetrics(metrics);
-        predictor2.setUsedMetrics(metrics);
-        predictor3.setUsedMetrics(metrics);
+        predictor.setUsedMetrics(settings.getUsedMetrics());
+        predictor1.setUsedMetrics(settings.getUsedMetrics());
+        predictor2.setUsedMetrics(settings.getUsedMetrics());
+        predictor3.setUsedMetrics(settings.getUsedMetrics());
         List<StockPredictor> predictors = new ArrayList<StockPredictor>();
         predictors.add(predictor);
         predictors.add(predictor1);

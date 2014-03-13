@@ -2,7 +2,6 @@ package stocky;
 
 import net.pushover.client.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,12 +12,6 @@ public class PushoverNotifier {
     private static final String API_KEY = "aAuxBBMEw8H87H2Rm6f5qQo2zvnxi2";
     private PushoverClient client;
     private List<String> recipients;
-
-    public PushoverNotifier() {
-        recipients = new ArrayList<String>();
-        recipients.add("TNMomsmQDmXQVyZmC3XTpZrkfMSTA8");
-        client = new PushoverRestClient();
-    }
 
     public PushoverNotifier(List<String> recipients) {
         client = new PushoverRestClient();

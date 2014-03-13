@@ -1,0 +1,16 @@
+{
+    "symbols": [
+        "AAPL",
+        "AXS",
+        "^OMX"
+    ],
+    "pushoverRecipients": [
+        "TNMomsmQDmXQVyZmC3XTpZrkfMSTA8"
+    ],
+    "usedMetrics": [
+        "mean_close"
+    ],
+    "start": "2000-01-01",
+    "end": "2014-03-09",
+    "periodSize": 5
+}

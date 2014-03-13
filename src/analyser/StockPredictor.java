@@ -77,6 +77,9 @@ public abstract class StockPredictor {
 
     public void setUsedMetrics(String[] metricNames) {
         usedMetrics = metricNames;
+        predicted = null;
+        accuracy = -1;
+        featureScores = null;
     }
 
     public void setScope(int scope) {
@@ -121,6 +124,7 @@ public abstract class StockPredictor {
     }
 
     protected Instance getTarget(List<NQuotes> nQuotesList) {
+        System.out.println("Target " + nQuotesList.get(nQuotesList.size() - 1));
         return getInstance(nQuotesList.get(nQuotesList.size() - 1));
     }
 
@@ -142,8 +146,8 @@ public abstract class StockPredictor {
         Map<String, Double> scores = new HashMap<String, Double>();
         GainRatio gainRatio = new GainRatio();
         gainRatio.build(dataset);
-        for(int i = 0; i < DEFAULT_METRICS.length; i++){
-            scores.put(DEFAULT_METRICS[i], gainRatio.score(i));
+        for (int i = 0; i < usedMetrics.length; i++) {
+            scores.put(usedMetrics[i], gainRatio.score(i));
         }
         return scores;
     }

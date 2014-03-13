@@ -74,8 +74,8 @@ public class NQuotes implements Comparable<NQuotes> {
 
     public static List<NQuotes> createNQuotes(List<Quote> quotes, int n) {
         List<NQuotes> nQuotesList = new ArrayList<NQuotes>(quotes.size());
-        for (int i = 0; i + n < quotes.size(); i = i + n) {
-            nQuotesList.add(new NQuotes(quotes, i, i + n));
+        for (int i = quotes.size() - 1; i - n >= 0; i = i - n) {
+            nQuotesList.add(new NQuotes(quotes, i - n, i));
         }
         Collections.sort(nQuotesList);
         return nQuotesList;

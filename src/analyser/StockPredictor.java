@@ -24,8 +24,8 @@ import java.util.Map;
 public abstract class StockPredictor {
 
     public static final String[] DEFAULT_METRICS = {MeanChangeMetric.NAME,
-                                                    MeanCloseMetric.NAME,
-                                                    MeanVolumeMetric.NAME,
+            MeanCloseMetric.NAME,
+            MeanVolumeMetric.NAME,
             VolatilityMetric.NAME,
             ADXMetric.NAME};
 
@@ -68,7 +68,7 @@ public abstract class StockPredictor {
         return accuracy;
     }
 
-    public Map<String, Double> featureScores(){
+    public Map<String, Double> featureScores() {
         if (featureScores == null) {
             throw new RuntimeException("Predictor not built.");
         }
@@ -124,7 +124,6 @@ public abstract class StockPredictor {
     }
 
     protected Instance getTarget(List<NQuotes> nQuotesList) {
-        System.out.println("Target " + nQuotesList.get(nQuotesList.size() - 1));
         return getInstance(nQuotesList.get(nQuotesList.size() - 1));
     }
 
@@ -142,7 +141,7 @@ public abstract class StockPredictor {
         return newAccuracy / performances.size();
     }
 
-    protected Map<String, Double> scoreFeatures(Dataset dataset){
+    protected Map<String, Double> scoreFeatures(Dataset dataset) {
         Map<String, Double> scores = new HashMap<String, Double>();
         GainRatio gainRatio = new GainRatio();
         gainRatio.build(dataset);

@@ -16,6 +16,10 @@ public class KNNSimplePredictor extends StockPredictor {
         super();
     }
 
+    public static String getName() {
+        return "knn";
+    }
+
     @Override
     protected Classifier classifier(Dataset dataset) {
         Classifier classifier = null;
@@ -35,7 +39,7 @@ public class KNNSimplePredictor extends StockPredictor {
     }
 
     @Override
-    protected String getName() {
+    protected String getLongName() {
         return "K-Nearest Neighbours Simple Predictor";
     }
 

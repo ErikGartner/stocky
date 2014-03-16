@@ -4,13 +4,21 @@
         "AXS",
         "^OMX"
     ],
+    "predictors": [
+        "log",
+        "nbay"
+    ],
     "pushoverRecipients": [
         "TNMomsmQDmXQVyZmC3XTpZrkfMSTA8"
     ],
     "usedMetrics": [
-        "mean_close"
+        "mean_close",
+        "volatility",
+        "adx",
+        "mean_change"
     ],
     "start": "2000-01-01",
     "end": "2014-03-09",
-    "periodSize": 5
+    "periodSize": 5,
+    "bootstrapp": true
 }

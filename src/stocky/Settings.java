@@ -16,11 +16,13 @@ import java.util.Scanner;
 public class Settings {
 
     private List<String> symbols;
+    private List<String> predictors;
     private List<String> pushoverRecipients;
     private String start;
     private String end;
     private int periodSize;
     private String[] usedMetrics;
+    private boolean bootstrapp;
 
     public static Settings readSettings(String file) throws FileNotFoundException {
 
@@ -41,51 +43,35 @@ public class Settings {
         pw.close();
     }
 
-    public String[] getUsedMetrics() {
-        return usedMetrics;
+    public List<String> getPredictors() {
+        return predictors;
     }
 
-    public void setUsedMetrics(String[] usedMetrics) {
-        this.usedMetrics = usedMetrics;
+    public String[] getUsedMetrics() {
+        return usedMetrics;
     }
 
     public String getStart() {
         return start;
     }
 
-    public void setStart(String start) {
-        this.start = start;
-    }
-
     public String getEnd() {
         return end;
-    }
-
-    public void setEnd(String end) {
-        this.end = end;
     }
 
     public List<String> getSymbols() {
         return symbols;
     }
 
-    public void setSymbols(List<String> symbols) {
-        this.symbols = symbols;
-    }
-
     public List<String> getPushoverRecipients() {
         return pushoverRecipients;
-    }
-
-    public void setPushoverRecipients(List<String> pushoverRecipients) {
-        this.pushoverRecipients = pushoverRecipients;
     }
 
     public int getPeriodSize() {
         return periodSize;
     }
 
-    public void setPeriodSize(int periodSize) {
-        this.periodSize = periodSize;
+    public boolean isBootstrapp() {
+        return bootstrapp;
     }
 }

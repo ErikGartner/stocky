@@ -5,6 +5,7 @@ import net.sf.javaml.classification.meta.Bagging;
 import net.sf.javaml.core.Dataset;
 import net.sf.javaml.sampling.Sampling;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -18,11 +19,11 @@ public class BootstrappingPredictor extends StockPredictor {
 
     public BootstrappingPredictor(List<StockPredictor> predictors) {
         super();
-        this.predictors = predictors;
+        this.predictors = new ArrayList<StockPredictor>(predictors);
     }
 
     @Override
-    protected String getName() {
+    protected String getLongName() {
         return "Bootstrapping Predictor";
     }
 
@@ -30,7 +31,7 @@ public class BootstrappingPredictor extends StockPredictor {
     protected String getOptions() {
         StringBuilder sb = new StringBuilder();
         for (StockPredictor sp : predictors) {
-            String words[] = sp.getName().split(" ");
+            String words[] = sp.getLongName().split(" ");
             String acronym = "";
             for (String s : words) {
                 acronym += s.charAt(0);

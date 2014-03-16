@@ -43,7 +43,7 @@ public abstract class StockPredictor {
     }
 
     public String toString() {
-        return String.format("%s[%s] with accuracy %f", getName(), getOptions(), accuracy());
+        return String.format("%s[%s]", getLongName(), getOptions());
     }
 
     /**
@@ -151,7 +151,7 @@ public abstract class StockPredictor {
         return scores;
     }
 
-    protected abstract String getName();
+    protected abstract String getLongName();
 
     protected abstract String getOptions();
 

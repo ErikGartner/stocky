@@ -22,13 +22,17 @@ public class LogisticSimplePredictor extends StockPredictor {
     }
 
     @Override
-    protected String getName() {
+    protected String getLongName() {
         return "Logistic Regression Simple Predictor";
     }
 
     @Override
     protected String getOptions() {
         return "";
+    }
+
+    public static String getName() {
+        return "log";
     }
 
 }

@@ -21,13 +21,17 @@ public class NBayesSimplePredictor extends StockPredictor {
     }
 
     @Override
-    protected String getName() {
+    protected String getLongName() {
         return "Naive Bayes Simple Predictor";
     }
 
     @Override
     protected String getOptions() {
         return "";
+    }
+
+    public static String getName() {
+        return "nbay";
     }
 
 }

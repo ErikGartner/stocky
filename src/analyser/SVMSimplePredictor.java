@@ -24,12 +24,16 @@ public class SVMSimplePredictor extends StockPredictor {
     }
 
     @Override
-    protected String getName() {
+    protected String getLongName() {
         return "Support Vector Simple Predictor";
     }
 
     @Override
     protected String getOptions() {
         return "";
+    }
+
+    public static String getName() {
+        return "svm";
     }
 }

@@ -15,7 +15,9 @@ public class PredictorFactory {
         List<String> predictors = settings.getPredictors();
         List<StockPredictor> stockPredictors = new ArrayList<StockPredictor>();
         for (String s : predictors) {
-            stockPredictors.add(createStockPredictor(s));
+            StockPredictor stockPredictor = createStockPredictor(s);
+            stockPredictor.setUsedMetrics(settings.getUsedMetrics());
+            stockPredictors.add(stockPredictor);
         }
 
         if (settings.isBootstrapp()) {

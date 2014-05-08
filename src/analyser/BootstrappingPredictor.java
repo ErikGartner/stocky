@@ -23,6 +23,11 @@ public class BootstrappingPredictor extends StockPredictor {
     }
 
     @Override
+    public void setUsedMetrics(String[] usedMetrics){
+        throw new UnsupportedOperationException("setUsedMetric is illegal on Bootstrapping Predictor.");
+    }
+
+    @Override
     protected String getLongName() {
         return "Bootstrapping Predictor";
     }

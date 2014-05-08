@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59867882-1454-448d-9e71-e88f1920a865" name="Default" comment="Added the new Settings file using Gson.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analyser/PredictorFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stocky/StockyMain.java" />
+    <list default="true" id="59867882-1454-448d-9e71-e88f1920a865" name="Default" comment="Added the PredictorFactory and restructured the program main.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java" afterPath="$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java" afterPath="$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/LogisticSimplePredictor.java" afterPath="$PROJECT_DIR$/src/analyser/LogisticSimplePredictor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/NBayesSimplePredictor.java" afterPath="$PROJECT_DIR$/src/analyser/NBayesSimplePredictor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/SVMSimplePredictor.java" afterPath="$PROJECT_DIR$/src/analyser/SVMSimplePredictor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/PredictorFactory.java" afterPath="$PROJECT_DIR$/src/analyser/PredictorFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stocky/Settings.java" afterPath="$PROJECT_DIR$/src/stocky/Settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyser/StockPredictor.java" afterPath="$PROJECT_DIR$/src/analyser/StockPredictor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stocky/Stocky.java" afterPath="$PROJECT_DIR$/src/stocky/Stocky.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.json" afterPath="$PROJECT_DIR$/config.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,7 +24,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -67,9 +60,9 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules />
-    <ui_properties />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true" />
+    <breakpoint_rules converted="true" />
+    <ui_properties converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -80,25 +73,8 @@
       <file leaf-file-name="StockPredictor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyser/StockPredictor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="66" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="2280">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StockyMain.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stocky/StockyMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BootstrappingPredictor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="34" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="2550">
+              <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -107,11 +83,39 @@
       <file leaf-file-name="PredictorFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyser/PredictorFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="810">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#366#382#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="840">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockTrend.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/stock/StockTrend.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="525">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockyMain.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/stocky/StockyMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="450">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BootstrappingPredictor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1275">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,43 +123,38 @@
       <file leaf-file-name="config.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="19" selection-start="385" selection-end="385" vertical-scroll-proportion="0.7553957" vertical-offset="0" max-vertical-offset="435">
+            <state vertical-scroll-proportion="0.5251142" vertical-offset="0" max-vertical-offset="657">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeanChangeMetric.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanChangeMetric.java">
+      <file leaf-file-name="MeanCloseMetric.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanCloseMetric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="360" selection-end="676" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+            <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="405">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VolatilityMetric.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/metrics/derived/VolatilityMetric.java">
+      <file leaf-file-name="HighToMeanMetric.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="49" selection-start="233" selection-end="243" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+            <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="540">
+              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockTrendTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/stock/StockTrendTest.java">
+      <file leaf-file-name="MeanVolumeMetric.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanVolumeMetric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="780">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Stocky.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Stocky.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="420">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -164,11 +163,9 @@
       <file leaf-file-name="Settings.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stocky/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="74" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="915">
-              <folding>
-                <element signature="e#1757#1758#0" expanded="true" />
-                <element signature="e#1790#1791#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1305">
+              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -236,12 +233,12 @@
         <option value="$PROJECT_DIR$/src/analyser/SVMSimplePredictor.java" />
         <option value="$PROJECT_DIR$/src/analyser/LogisticSimplePredictor.java" />
         <option value="$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java" />
-        <option value="$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java" />
-        <option value="$PROJECT_DIR$/src/analyser/PredictorFactory.java" />
         <option value="$PROJECT_DIR$/src/stocky/StockyMain.java" />
-        <option value="$PROJECT_DIR$/src/stocky/Stocky.java" />
-        <option value="$PROJECT_DIR$/src/stocky/Settings.java" />
         <option value="$PROJECT_DIR$/src/analyser/StockPredictor.java" />
+        <option value="$PROJECT_DIR$/src/stocky/Settings.java" />
+        <option value="$PROJECT_DIR$/src/stocky/Stocky.java" />
+        <option value="$PROJECT_DIR$/src/analyser/PredictorFactory.java" />
+        <option value="$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java" />
         <option value="$PROJECT_DIR$/config.json" />
       </list>
     </option>
@@ -287,7 +284,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -299,8 +296,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -329,124 +324,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stocky" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="metrics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="metrics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="derived" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockPrediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analyser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -496,6 +381,7 @@
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="stocky" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -585,14 +471,6 @@
       <TestRunner />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="scalaCoverage" />
@@ -608,17 +486,25 @@
       <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
       <option name="BCName" value="" />
       <option name="launcherParameters">
         <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
           <option name="launcherType" value="OSDefault" />
           <option name="newPlayerInstance" value="false" />
           <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
@@ -677,6 +563,21 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="scalaCoverage" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
       <option name="BCName" value="" />
       <option name="IOSSimulatorSdkPath" value="" />
@@ -693,7 +594,7 @@
       <option name="launchUrl" value="false" />
       <option name="launcherParameters">
         <LauncherParameters>
-          <option name="browserFamily" value="FIREFOX" />
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
           <option name="launcherType" value="OSDefault" />
           <option name="newPlayerInstance" value="false" />
           <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
@@ -710,21 +611,6 @@
       <option name="screenWidth" value="0" />
       <option name="url" value="http://" />
       <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <extension name="scalaCoverage" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
     <list size="3">
@@ -754,22 +640,8 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  <component name="SvnConfiguration" myUseAcceleration="nothing">
+    <configuration />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -793,28 +665,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3260274" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3260274" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3260274" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23263328" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23263328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4958904" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="307" y="140" width="1080" height="600" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -823,6 +697,9 @@
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
   </component>
@@ -850,7 +727,8 @@
     <MESSAGE value="Removed printout." />
     <MESSAGE value="Added the new Settings file using Gson." />
     <MESSAGE value="Added a default config.json." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a default config.json." />
+    <MESSAGE value="Added the PredictorFactory and restructured the program main." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the PredictorFactory and restructured the program main." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -864,121 +742,141 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/dataloader/StockDataLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="630" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="630">
+          <caret line="25" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataloader/YahooStockLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1125" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1125">
+          <caret line="15" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/joda-time-2.3.jar!/org/joda/time/LocalDate.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="0" selection-start="7031" selection-end="7031" vertical-scroll-proportion="0.0" vertical-offset="2670" max-vertical-offset="4125" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2670" max-vertical-offset="4125">
+          <caret line="178" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Formatter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="357" column="0" selection-start="15564" selection-end="15564" vertical-scroll-proportion="0.0" vertical-offset="5355" max-vertical-offset="5445" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5355" max-vertical-offset="5445">
+          <caret line="357" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stock/Stock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="721" selection-end="822" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="750" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="750">
+          <caret line="36" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stocky/Stocky.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="270">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="270">
+          <caret line="10" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataloader/StockDataLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="38" selection-start="145" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="300" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="300">
+          <caret line="11" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataloader/YahooStockLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="450" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="450">
+          <caret line="12" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stock/Stock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="405" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="405">
+          <caret line="17" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/util/Formatter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="357" column="0" selection-start="15564" selection-end="15564" vertical-scroll-proportion="0.0" vertical-offset="5355" max-vertical-offset="5445" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5355" max-vertical-offset="5445">
+          <caret line="357" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/joda-time-2.3.jar!/org/joda/time/LocalDate.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="0" selection-start="7031" selection-end="7031" vertical-scroll-proportion="0.0" vertical-offset="2670" max-vertical-offset="4125" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2670" max-vertical-offset="4125">
+          <caret line="178" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/VolumeMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/javaml-0.1.7.jar!/net/sf/javaml/classification/evaluation/CrossValidation.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="330" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="330">
+          <caret line="16" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/javaml-0.1.7.jar!/net/sf/javaml/classification/bayes/AbstractBayesianClassifier.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="2730" selection-end="2730" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="870" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="870">
+          <caret line="52" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/HighMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="7" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/javaml-0.1.7.jar!/net/sf/javaml/classification/bayes/NaiveBayesClassifier.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="813" selection-end="813" vertical-scroll-proportion="0.37441498" vertical-offset="0" max-vertical-offset="641" />
+        <state vertical-scroll-proportion="0.37441498" vertical-offset="0" max-vertical-offset="641">
+          <caret line="16" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/LowMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="42" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="7" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/OpenMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="18" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="10" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/CloseMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="106" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="7" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/javaml-0.1.7.jar!/net/sf/javaml/core/Dataset.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="165" selection-end="172" vertical-scroll-proportion="0.11700468" vertical-offset="0" max-vertical-offset="641" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanCloseMetric.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="303" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanVolumeMetric.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="50" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <folding />
+        <state vertical-scroll-proportion="0.11700468" vertical-offset="0" max-vertical-offset="641">
+          <caret line="6" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -993,13 +891,13 @@
             <node x="" y="">svm_predict</node>
             <node x="" y="">netscape</node>
             <node x="" y="">nz</node>
-            <node x="" y="">net</node>
             <node x="" y="">org</node>
+            <node x="" y="">net</node>
             <node x="" y="">sun</node>
             <node x="" y="">stock</node>
-            <node x="" y="">sunw</node>
-            <node x="" y="">metrics</node>
             <node x="" y="">svm_scale</node>
+            <node x="" y="">metrics</node>
+            <node x="" y="">sunw</node>
             <node x="" y="">javax</node>
             <node x="" y="">Jama</node>
             <node x="" y="">svm_train</node>
@@ -1026,204 +924,222 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stock/StockTrend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/derived/NQStockMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="5" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="9" max-vertical-offset="750">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="9" max-vertical-offset="750">
+          <caret line="30" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/StockMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="30" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <caret line="30" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stock/Quote.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="62" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stock/Stock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="23" selection-start="1079" selection-end="1079" vertical-scroll-proportion="1.23918" vertical-offset="86" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="1" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="705">
+          <caret line="36" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stock/NQuotes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="19" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.0" vertical-offset="551" max-vertical-offset="1230">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="551" max-vertical-offset="1230">
+          <caret line="56" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/AdjustedCloseMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="52" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="5" column="52" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics/derived/ADXMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="43" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0" vertical-offset="326" max-vertical-offset="1005">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="326" max-vertical-offset="1005">
+          <caret line="62" column="43" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataloader/YahooStockLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/analyser/SVMSimplePredictor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="7" selection-start="3002" selection-end="3002" vertical-scroll-proportion="1.1936936" vertical-offset="375" max-vertical-offset="1485">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <caret line="35" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyser/NBayesSimplePredictor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <caret line="32" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/Override.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15418503" vertical-offset="0" max-vertical-offset="681">
+          <caret line="8" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyser/LogisticSimplePredictor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+          <caret line="33" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="810">
+          <caret line="18" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/stock/StockTrendTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="780">
+          <caret line="36" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stocky.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metrics/derived/VolatilityMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="10" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanChangeMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="17" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stocky/PushoverNotifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+          <caret line="15" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stock/Stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71281296" vertical-offset="146" max-vertical-offset="825">
+          <caret line="46" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stock/StockTrend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="525">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataloader/StockDataLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="31" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <folding />
+        <state vertical-scroll-proportion="0.48600882" vertical-offset="0" max-vertical-offset="679">
+          <caret line="29" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stocky/PushoverNotifier.java">
+    <entry file="file://$PROJECT_DIR$/src/dataloader/YahooStockLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyser/SVMSimplePredictor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyser/NBayesSimplePredictor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="10" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/Override.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="18" selection-start="306" selection-end="314" vertical-scroll-proportion="0.15418503" vertical-offset="0" max-vertical-offset="681">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyser/LogisticSimplePredictor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="17" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyser/KNNSimplePredictor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/stock/StockTrendTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stocky.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyser/PredictorFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="810">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#366#382#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1485">
+          <caret line="88" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyser/BootstrappingPredictor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="34" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1275">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stocky/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="74" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0" vertical-offset="236" max-vertical-offset="915">
-          <folding>
-            <element signature="e#1757#1758#0" expanded="true" />
-            <element signature="e#1790#1791#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyser/StockPredictor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="66" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="2280">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stocky/StockyMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="2550">
+          <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stocky/Stocky.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="62" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="780">
+        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="780">
+          <caret line="42" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyser/PredictorFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="840">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/metrics/derived/VolatilityMetric.java">
+    <entry file="file://$PROJECT_DIR$/src/stocky/StockyMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="49" selection-start="233" selection-end="243" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="450">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanChangeMetric.java">
+    <entry file="file://$PROJECT_DIR$/src/metrics/derived/HighToMeanMetric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="360" selection-end="676" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="540">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanVolumeMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="420">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/metrics/derived/MeanCloseMetric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="405">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stocky/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1305">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="385" selection-end="385" vertical-scroll-proportion="0.7553957" vertical-offset="0" max-vertical-offset="435">
+        <state vertical-scroll-proportion="0.5251142" vertical-offset="0" max-vertical-offset="657">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding />
         </state>
       </provider>

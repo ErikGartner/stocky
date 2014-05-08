@@ -2,6 +2,7 @@ package stocky;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.joda.time.LocalDate;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -56,7 +57,11 @@ public class Settings {
     }
 
     public String getEnd() {
+        if(end == null){
+            end = LocalDate.now().toString();
+        }
         return end;
+
     }
 
     public List<String> getSymbols() {

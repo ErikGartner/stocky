@@ -4,6 +4,7 @@ import analyser.PredictorFactory;
 import analyser.StockPredictor;
 import dataloader.StockDataLoader;
 import dataloader.YahooStockLoader;
+import evaluator.SimpleEvaluator;
 import org.joda.time.LocalDate;
 import stock.Stock;
 
@@ -42,7 +43,8 @@ public class Stocky {
             for (StockPredictor predictor : stockPredictors) {
 
                 predictor.buildPredictor(stock);
-                System.out.printf("\t%s: %s with accuracy %f\n", predictor, predictor.prediction(), predictor.accuracy());
+                SimpleEvaluator se = new SimpleEvaluator(predictor, stock, LocalDate.parse("2014-01-01"));
+                System.out.printf("\t%s: %s with accuracy %f. Performance: %f\n", predictor, predictor.prediction(), predictor.accuracy(), se.performance());
 
             }
 

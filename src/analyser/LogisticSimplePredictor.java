@@ -18,7 +18,6 @@ public class LogisticSimplePredictor extends StockPredictor {
     protected Classifier classifier(Dataset dataset) {
         Logistic lr = new Logistic();
         return new WekaClassifier(lr);
-
     }
 
     @Override

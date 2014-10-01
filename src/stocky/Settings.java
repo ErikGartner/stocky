@@ -57,7 +57,7 @@ public class Settings {
     }
 
     public String getEnd() {
-        if(end == null){
+        if (end == null) {
             end = LocalDate.now().toString();
         }
         return end;

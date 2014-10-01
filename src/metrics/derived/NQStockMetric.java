@@ -30,11 +30,11 @@ public abstract class NQStockMetric extends StockMetric {
         return total / quotes.size();
     }
 
-    protected static double standardDeviation(String metricName, NQuotes nQuotes){
+    protected static double standardDeviation(String metricName, NQuotes nQuotes) {
         double avg = average(metricName, nQuotes);
         int n = nQuotes.getN();
         double totalDev = 0.0;
-        for(Quote q : nQuotes.getQuotes()){
+        for (Quote q : nQuotes.getQuotes()) {
             double close = q.getMetric(metricName).getValue();
             totalDev += Math.pow(close - avg, 2);
         }

@@ -46,7 +46,7 @@ public class NQuotes implements Comparable<NQuotes> {
         return last;
     }
 
-    public int getN(){
+    public int getN() {
         return last - first;
     }
 
@@ -80,4 +80,5 @@ public class NQuotes implements Comparable<NQuotes> {
         Collections.sort(nQuotesList);
         return nQuotesList;
     }
+
 }

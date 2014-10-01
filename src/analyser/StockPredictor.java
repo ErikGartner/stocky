@@ -23,7 +23,8 @@ import java.util.Map;
  */
 public abstract class StockPredictor {
 
-    public static final String[] DEFAULT_METRICS = {MeanChangeMetric.NAME,
+    public static final String[] DEFAULT_METRICS = {
+            MeanChangeMetric.NAME,
             MeanCloseMetric.NAME,
             MeanVolumeMetric.NAME,
             VolatilityMetric.NAME,

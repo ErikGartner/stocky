@@ -52,4 +52,5 @@ public class Stock {
     public String getSymbol() {
         return symbol;
     }
+
 }

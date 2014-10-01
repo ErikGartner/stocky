@@ -17,6 +17,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class StockTrendTest {
 
+
     Quote low;
     Quote high;
 

@@ -28,10 +28,10 @@ public class ADXMetric extends NQStockMetric {
         double emaNegDM = 0.0;
 
         List<Quote> allQuotes = nQuotes.getAllQuotes();
-        for(int i = nQuotes.getFirst(); i <= nQuotes.getLast(); i++){
+        for (int i = nQuotes.getFirst(); i <= nQuotes.getLast(); i++) {
 
             int j;
-            if(i > 1){
+            if (i > 1) {
                 j = i - 1;   //   the index of the previous day
             } else {
                 j = i;

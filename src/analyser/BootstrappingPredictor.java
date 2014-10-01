@@ -23,7 +23,7 @@ public class BootstrappingPredictor extends StockPredictor {
     }
 
     @Override
-    public void setUsedMetrics(String[] usedMetrics){
+    public void setUsedMetrics(String[] usedMetrics) {
         throw new UnsupportedOperationException("setUsedMetric is illegal on Bootstrapping Predictor.");
     }
 
@@ -61,7 +61,7 @@ public class BootstrappingPredictor extends StockPredictor {
 
         Classifier classifier = null;
         double accuracy = 0.0;
-        Random rnd = new Random(4325435);
+        Random rnd = new Random();
         for (Sampling sampling : Sampling.values()) {
 
             classifier = new Bagging(classifiers, sampling, rnd.nextLong());

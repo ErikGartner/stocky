@@ -43,7 +43,7 @@ public class Stocky {
             for (StockPredictor predictor : stockPredictors) {
 
                 predictor.buildPredictor(stock);
-                SimpleEvaluator se = new SimpleEvaluator(predictor, stock, LocalDate.parse("2014-01-01"));
+                SimpleEvaluator se = new SimpleEvaluator(predictor, stock, LocalDate.parse("2014-09-01"));
                 System.out.printf("\t%s: %s with accuracy %f. Performance: %f\n", predictor, predictor.prediction(), predictor.accuracy(), se.performance());
 
             }

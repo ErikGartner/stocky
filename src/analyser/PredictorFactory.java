@@ -37,6 +37,8 @@ public class PredictorFactory {
             return new NBayesSimplePredictor();
         } else if (name.equals(SVMSimplePredictor.getName())) {
             return new SVMSimplePredictor();
+        } else if (name.equals(PerceptronPredictor.getName())){
+            return new PerceptronPredictor();
         } else {
             throw new RuntimeException("Unknown predictor identifier in settings.");
         }

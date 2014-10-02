@@ -5,20 +5,17 @@
         "^OMX"
     ],
     "predictors": [
-        "log",
-        "nbay"
+        "mlp"
     ],
     "pushoverRecipients": [
         "TNMomsmQDmXQVyZmC3XTpZrkfMSTA8"
     ],
     "usedMetrics": [
         "mean_close",
-        "volatility",
-        "mean_change",
         "high_to_mean",
         "mean_volume"
     ],
     "start": "2000-01-01",
     "periodSize": 5,
-    "bootstrapp": true
+    "bootstrapp": false
 }

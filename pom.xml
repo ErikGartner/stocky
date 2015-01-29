@@ -14,7 +14,7 @@
             <artifactId>javaml</artifactId>
             <scope>system</scope>
             <version>0.1.7</version>
-            <systemPath>${basedir}\src\lib\javaml-0.1.7.jar</systemPath>
+            <systemPath>${basedir}/src/lib/javaml-0.1.7.jar</systemPath>
         </dependency>
 
         <dependency>

@@ -19,6 +19,7 @@ public class Settings {
     private List<String> symbols;
     private List<String> predictors;
     private List<String> pushoverRecipients;
+    private String pushoverKey;
     private String start;
     private String end;
     private int periodSize;
@@ -78,5 +79,9 @@ public class Settings {
 
     public boolean isBootstrapp() {
         return bootstrapp;
+    }
+
+    public String pushoverKey() {
+      return pushoverKey;
     }
 }

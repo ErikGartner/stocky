@@ -9,13 +9,14 @@ import java.util.List;
  */
 public class PushoverNotifier {
 
-    private static final String API_KEY = "aAuxBBMEw8H87H2Rm6f5qQo2zvnxi2";
+    private String API_KEY;
     private PushoverClient client;
     private List<String> recipients;
 
-    public PushoverNotifier(List<String> recipients) {
+    public PushoverNotifier(String key, List<String> recipients) {
         client = new PushoverRestClient();
         this.recipients = recipients;
+        API_KEY = key;
     }
 
     public void send(String title, String msg) {

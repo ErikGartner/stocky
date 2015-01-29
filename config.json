@@ -8,9 +8,9 @@
         "mlp"
     ],
     "pushoverRecipients": [
-        "TNMomsmQDmXQVyZmC3XTpZrkfMSTA8"
+        ""
     ],
-    "pusheroverKey": ""
+    "pushoverKey": ""
     ,
     "usedMetrics": [
         "mean_close",

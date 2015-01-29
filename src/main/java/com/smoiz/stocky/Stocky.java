@@ -27,7 +27,7 @@ public class Stocky {
     public Stocky(Settings settings) {
 
         this.settings = settings;
-        notifier = new PushoverNotifier(settings.getPushoverRecipients());
+        notifier = new PushoverNotifier(settings.pushoverKey(), settings.getPushoverRecipients());
 
         start = LocalDate.parse(settings.getStart());
         end = LocalDate.parse(settings.getEnd());
@@ -45,8 +45,9 @@ public class Stocky {
             for (StockPredictor predictor : stockPredictors) {
 
                 predictor.buildPredictor(stock);
-                SimpleEvaluator se = new SimpleEvaluator(predictor, stock, LocalDate.parse("2014-01-01"));
-                System.out.printf("\t%s: %s with accuracy %f. Performance: %f\n", predictor, predictor.prediction(), predictor.accuracy(), se.performance());
+                //SimpleEvaluator se = new SimpleEvaluator(predictor, stock, LocalDate.parse("2014-01-01"));
+                notifier.send(stock.getName(), predictor.prediction().toString());
+                System.out.printf("\t%s: %s with accuracy %f. Performance: %f\n", predictor, predictor.prediction(), predictor.accuracy(), 0.0);
 
             }
 

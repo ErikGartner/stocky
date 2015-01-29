@@ -55,10 +55,10 @@ The project uses maven to download all dependencies and all external libraries a
 Stocky build on top of several open source libraries:
 
 * JavaML
-* WEKA
+* Weka
 * GSON
-* Joda Time
-* Pushover Client
+* Joda-Time
+* Pushover4j
 
 ## Tests
 

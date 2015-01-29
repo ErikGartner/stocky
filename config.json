@@ -10,6 +10,8 @@
     "pushoverRecipients": [
         "TNMomsmQDmXQVyZmC3XTpZrkfMSTA8"
     ],
+    "pusheroverKey": ""
+    ,
     "usedMetrics": [
         "mean_close",
         "high_to_mean",

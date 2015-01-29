@@ -1,4 +1,4 @@
-### Stocky
+# Stocky
 
 [![Codeship Status for Stocky](https://codeship.com/projects/7d9d7560-8a2f-0132-c7fa-7acbd47feca1/status)](https://codeship.com/projects/59952)  
 
@@ -50,6 +50,14 @@ config.json. Below is an example config:
 ## Installation
 
 The project uses maven to download all dependencies and all external libraries are included.
+
+### Third-party libraries
+Stocky build on top of several open source libraries:
+* JavaML
+* WEKA
+* GSON
+* Joda Time
+* Pushover Client
 
 ## Tests
 

@@ -53,6 +53,7 @@ The project uses maven to download all dependencies and all external libraries a
 
 ### Third-party libraries
 Stocky build on top of several open source libraries:
+
 * JavaML
 * WEKA
 * GSON

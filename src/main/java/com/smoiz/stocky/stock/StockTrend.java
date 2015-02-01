@@ -1,5 +1,6 @@
 package com.smoiz.stocky.stock;
 
+import com.smoiz.stocky.Stocky;
 import com.smoiz.stocky.metrics.CloseMetric;
 import com.smoiz.stocky.metrics.OpenMetric;
 import com.smoiz.stocky.metrics.derived.MeanCloseMetric;

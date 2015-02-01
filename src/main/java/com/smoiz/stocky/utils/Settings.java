@@ -25,6 +25,7 @@ public class Settings {
     private int periodSize;
     private String[] usedMetrics;
     private boolean bootstrapp;
+    private boolean debug;
 
     public static Settings readSettings(String file) throws FileNotFoundException {
 
@@ -84,4 +85,9 @@ public class Settings {
     public String pushoverKey() {
       return pushoverKey;
     }
+
+    public boolean debug(){
+        return debug;
+    }
+
 }

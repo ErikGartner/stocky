@@ -41,6 +41,9 @@ public abstract class NQStockMetric extends StockMetric {
         return Math.sqrt(totalDev / n);
     }
 
+    /*
+    http://en.wikipedia.org/wiki/Average_true_range
+     */
     protected static double trueRange(Quote q, Quote prev) {
         double high = q.getMetric(HighMetric.NAME).getValue();
         double low = q.getMetric(LowMetric.NAME).getValue();

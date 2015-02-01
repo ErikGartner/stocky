@@ -24,6 +24,8 @@ public class Stocky {
     private List<StockPredictor> stockPredictors;
     private List<Stock> stocks;
 
+    private static boolean debug;
+
     public Stocky(Settings settings) {
 
         this.settings = settings;
@@ -34,6 +36,7 @@ public class Stocky {
         StockDataLoader loader = new YahooStockLoader(settings.getSymbols(), start, end);
         stocks = loader.createStockList();
         stockPredictors = PredictorFactory.createPredictors(settings);
+        debug = this.settings.debug();
 
     }
 
@@ -45,14 +48,24 @@ public class Stocky {
             for (StockPredictor predictor : stockPredictors) {
 
                 predictor.buildPredictor(stock);
-                //SimpleEvaluator se = new SimpleEvaluator(predictor, stock, LocalDate.parse("2014-01-01"));
+                SimpleEvaluator se = new SimpleEvaluator(predictor, stock, LocalDate.parse("2014-01-01"), settings.getPeriodSize());
                 notifier.send(stock.getName(), predictor.prediction().toString());
-                System.out.printf("\t%s: %s with accuracy %f. Performance: %f\n", predictor, predictor.prediction(), predictor.accuracy(), 0.0);
+                System.out.printf("\t%s: %s with accuracy %f. Performance: %f\n", predictor, predictor.prediction(), predictor.accuracy(), se.performance());
+                System.out.println(se.detailedPerformance());
 
             }
 
         }
 
+    }
+
+    public static void dbg(String msg){
+        dbgf(msg);
+    }
+
+    public static void dbgf(String msg, Object... args){
+        if(debug)
+            System.out.println(String.format(msg, args));
     }
 
 }

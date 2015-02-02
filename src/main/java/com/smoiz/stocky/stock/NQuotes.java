@@ -65,6 +65,9 @@ public class NQuotes implements Comparable<NQuotes> {
 
     private void computeMetrics() {
         metrics.put(MeanCloseMetric.NAME, MeanCloseMetric.createMetric(this));
+        metrics.put(MeanOpenMetric.NAME, MeanOpenMetric.createMetric(this));
+        metrics.put(MeanLowMetric.NAME, MeanLowMetric.createMetric(this));
+        metrics.put(MeanAdjCloseMetric.NAME, MeanAdjCloseMetric.createMetric(this));
         metrics.put(MeanVolumeMetric.NAME, MeanVolumeMetric.createMetric(this));
         metrics.put(MeanChangeMetric.NAME, MeanChangeMetric.createMetric(this));
         metrics.put(HighToMeanMetric.NAME, HighToMeanMetric.createMetric(this));

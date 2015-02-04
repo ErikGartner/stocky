@@ -1,5 +1,6 @@
 package com.smoiz.stocky.analyser;
 
+import com.smoiz.stocky.stock.Stock;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.classification.KDtreeKNN;
 import net.sf.javaml.classification.KNearestNeighbors;
@@ -8,12 +9,12 @@ import net.sf.javaml.core.Dataset;
 /**
  * Created by erik on 06/03/14.
  */
-public class KNNSimplePredictor extends StockPredictor {
+public class KNNSimplePredictor extends WekaPredictor {
 
     private int bestK = 2;
 
-    public KNNSimplePredictor() {
-        super();
+    public KNNSimplePredictor(String metrics[], Stock stock) {
+        super(metrics, stock);
     }
 
     public static String getName() {

@@ -1,5 +1,6 @@
 package com.smoiz.stocky.analyser;
 
+import com.smoiz.stocky.stock.Stock;
 import libsvm.LibSVM;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.core.Dataset;
@@ -7,10 +8,10 @@ import net.sf.javaml.core.Dataset;
 /**
  * Created by erik on 09/03/14.
  */
-public class SVMSimplePredictor extends StockPredictor {
+public class SVMSimplePredictor extends WekaPredictor {
 
-    public SVMSimplePredictor() {
-        super();
+    public SVMSimplePredictor(String metrics[], Stock stock) {
+        super(metrics, stock);
     }
 
     /**

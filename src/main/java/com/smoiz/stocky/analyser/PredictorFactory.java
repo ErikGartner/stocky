@@ -1,5 +1,6 @@
 package com.smoiz.stocky.analyser;
 
+import com.smoiz.stocky.stock.Stock;
 import com.smoiz.stocky.utils.Settings;
 
 import java.util.ArrayList;
@@ -10,43 +11,36 @@ import java.util.List;
  */
 public class PredictorFactory {
 
-    public static List<StockPredictor> createPredictors(Settings settings) {
+    public static List<StockPredictor> createPredictors(Settings settings, List<Stock> stocks) {
 
         List<String> predictors = settings.getPredictors();
         List<StockPredictor> stockPredictors = new ArrayList<StockPredictor>();
         for (String s : predictors) {
-            StockPredictor stockPredictor = createStockPredictor(s);
-            stockPredictor.setUsedMetrics(settings.getUsedMetrics());
-            stockPredictors.add(stockPredictor);
-        }
-
-        if (settings.isBootstrapp()) {
-            stockPredictors.add(createBootStrappingPredictor(stockPredictors));
+            for(Stock stock: stocks) {
+                StockPredictor stockPredictor = createStockPredictor(settings.getUsedMetrics(), s, stock);
+                stockPredictors.add(stockPredictor);
+            }
         }
 
         return stockPredictors;
     }
 
-    private static StockPredictor createStockPredictor(String name) {
+    public static StockPredictor createStockPredictor(String[] metrics, String name, Stock stock) {
 
         if (name.equals(KNNSimplePredictor.getName())) {
-            return new KNNSimplePredictor();
+            return new KNNSimplePredictor(metrics, stock);
         } else if (name.equals(LogisticSimplePredictor.getName())) {
-            return new LogisticSimplePredictor();
+            return new LogisticSimplePredictor(metrics, stock);
         } else if (name.equals(NBayesSimplePredictor.getName())) {
-            return new NBayesSimplePredictor();
+            return new NBayesSimplePredictor(metrics, stock);
         } else if (name.equals(SVMSimplePredictor.getName())) {
-            return new SVMSimplePredictor();
+            return new SVMSimplePredictor(metrics, stock);
         } else if (name.equals(PerceptronPredictor.getName())){
-            return new PerceptronPredictor();
+            return new PerceptronPredictor(metrics, stock);
         } else {
             throw new RuntimeException("Unknown predictor identifier in settings.");
         }
 
-    }
-
-    private static StockPredictor createBootStrappingPredictor(List<StockPredictor> predictors) {
-        return new BootstrappingPredictor(predictors);
     }
 
 }

@@ -22,7 +22,7 @@ public class SimpleEvaluator {
     private int periodSize;
     private String detailedPerf;
 
-    public SimpleEvaluator(StockPredictor predictor, Stock stock, LocalDate start, int periodSize) {
+    public SimpleEvaluator(StockPredictor predictor, Stock stock, LocalDate start) {
         this.stock = stock;
         this.start = start;
         this.predictor = predictor;
@@ -80,7 +80,7 @@ public class SimpleEvaluator {
         while (startIndex < quoteList.size()) {
             List<Quote> corpus = quoteList.subList(0, startIndex);
             Stock s = new Stock(stock.getSymbol(), corpus);
-            predictor.buildPredictor(s);
+            //predictor.buildPredictor(s
             StockTrend st = predictor.prediction();
             Stocky.dbgf("%s: %s -> %s", s.getSymbol(), corpus.get(corpus.size() - 1).getDate().toString(), st.name());
             lastClose = corpus.get(corpus.size() - 1).getMetric(AdjustedCloseMetric.NAME).getValue();

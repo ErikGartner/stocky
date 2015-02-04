@@ -2,6 +2,7 @@ package com.smoiz.stocky;
 
 import com.smoiz.stocky.analyser.PredictorFactory;
 import com.smoiz.stocky.analyser.StockPredictor;
+import com.smoiz.stocky.analyser.WekaPredictor;
 import com.smoiz.stocky.dataloader.StockDataLoader;
 import com.smoiz.stocky.dataloader.YahooStockLoader;
 import com.smoiz.stocky.evaluator.SimpleEvaluator;
@@ -30,30 +31,22 @@ public class Stocky {
 
         this.settings = settings;
         notifier = new PushoverNotifier(settings.pushoverKey(), settings.getPushoverRecipients());
-
         start = LocalDate.parse(settings.getStart());
         end = LocalDate.parse(settings.getEnd());
+        debug = this.settings.debug();
+
         StockDataLoader loader = new YahooStockLoader(settings.getSymbols(), start, end);
         stocks = loader.createStockList();
-        stockPredictors = PredictorFactory.createPredictors(settings);
-        debug = this.settings.debug();
+        stockPredictors = PredictorFactory.createPredictors(settings, stocks);
 
     }
 
     public void predictStocks() {
 
-        for (Stock stock : stocks) {
+        for (StockPredictor predictor : stockPredictors) {
 
-            System.out.println(stock.getName());
-            for (StockPredictor predictor : stockPredictors) {
-
-                predictor.buildPredictor(stock);
-                SimpleEvaluator se = new SimpleEvaluator(predictor, stock, LocalDate.parse("2014-01-01"), settings.getPeriodSize());
-                notifier.send(stock.getName(), predictor.prediction().toString());
-                System.out.printf("\t%s: %s with accuracy %f. Performance: %f\n", predictor, predictor.prediction(), predictor.accuracy(), se.performance());
-                System.out.println(se.detailedPerformance());
-
-            }
+            notifier.send(predictor.getStock().getName(), predictor.prediction().toString());
+            System.out.printf("\t%s: %s with accuracy %f\n", predictor, predictor.prediction(), predictor.accuracy());
 
         }
 

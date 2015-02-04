@@ -24,8 +24,7 @@ config.json. Below is an example config:
     "pushoverRecipients": [
         ""
     ],
-    "pushoverKey": ""
-    ,
+    "pushoverKey": "",
     "usedMetrics": [
         "mean_close",
         "high_to_mean",
@@ -33,7 +32,8 @@ config.json. Below is an example config:
     ],
     "start": "2000-01-01",
     "periodSize": 5,
-    "bootstrapp": false
+    "bootstrapp": false,
+    "debug": false
 }
 
 ```

@@ -1,5 +1,6 @@
 package com.smoiz.stocky.analyser;
 
+import com.smoiz.stocky.stock.Stock;
 import net.sf.javaml.classification.Classifier;
 import net.sf.javaml.core.Dataset;
 import net.sf.javaml.tools.weka.WekaClassifier;
@@ -8,10 +9,10 @@ import weka.classifiers.bayes.NaiveBayes;
 /**
  * Created by erik on 06/03/14.
  */
-public class NBayesSimplePredictor extends StockPredictor {
+public class NBayesSimplePredictor extends WekaPredictor {
 
-    public NBayesSimplePredictor() {
-        super();
+    public NBayesSimplePredictor(String metrics[], Stock stock) {
+        super(metrics, stock);
     }
 
     @Override

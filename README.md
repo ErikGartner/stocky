@@ -72,7 +72,7 @@ Reach me at @erik_gartner.
 
 Stocky is released under The MIT License (MIT).
 
-Copyright (c) 2015 Stocky
+Copyright (c) 2015 Erik Gärtner
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

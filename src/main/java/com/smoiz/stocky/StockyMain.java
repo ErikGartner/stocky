@@ -1,5 +1,6 @@
 package com.smoiz.stocky;
 
+import com.smoiz.stocky.dataloader.Sentiment;
 import com.smoiz.stocky.utils.Settings;
 
 import java.io.FileNotFoundException;

@@ -20,7 +20,6 @@ public class Settings {
     private List<String> predictors;
     private List<String> pushoverRecipients;
     private String pushoverKey;
-    private String mashapeKey;
     private String start;
     private String end;
     private int periodSize;
@@ -91,7 +90,4 @@ public class Settings {
         return debug;
     }
 
-    public String getMashapeKey() {
-        return mashapeKey;
-    }
 }

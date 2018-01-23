@@ -2,6 +2,7 @@
 
 [![Codeship Status for Stocky](https://codeship.com/projects/7d9d7560-8a2f-0132-c7fa-7acbd47feca1/status)](https://codeship.com/projects/59952)  
 
+**DEPRECATED:** *This project is old and does not provide tradeable results. Use only for inspiration and code examples.*
 
 Stocky is an attempt at a stock prediction application built ontop of JavaML and WEKA.
 It combines a lot of different algorithms and metrics.
